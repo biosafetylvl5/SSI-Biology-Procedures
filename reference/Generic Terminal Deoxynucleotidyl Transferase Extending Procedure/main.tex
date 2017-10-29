@@ -1,0 +1,144 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.25cm,right=2.25cm,marginparwidth=2.25cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+%My Junk
+\setlength{\footskip}{43pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{readarray}
+
+%All File Formatting
+\setlength\parindent{0pt}
+
+%\usepackage[x11names]{xcolor}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{colortbl}
+
+
+%Special Section(s)
+%\colorlet{shadecolor}{yellow}%FF3232}
+\definecolor{safetyFrame}{HTML}{FFFFFF}
+\newenvironment{safety}{%
+\begin{tcolorbox}[width=\textwidth, colframe=safetyFrame, arc=1.5mm]
+}%
+{\end{tcolorbox}}
+
+
+%Footer
+\lfoot{\includegraphics[height=1.5cm]{1000x350-Horiz-Logo-WhiteRed-BlackText.png}}
+
+\title{Generic \tdt{} Extending Procedure}
+\author{Written by Michael Uttmark\\
+		Checked by Alan Tomusiak\\
+        Stanford Student Space Initiative Biology Subteam}
+
+
+%Custom Commands
+\newcommand{\C}{\degree C}
+\newcommand{\B}[1]{\textbf{#1}}
+\newcommand{\stopPoint}{\begin{center}
+\rule{0.5\textwidth}{.4pt}\\
+\vspace{1mm} 
+OPTIONAL STOP POINT\\
+\rule{0.5\textwidth}{.4pt}
+\end{center}}
+\newcommand{\RstopPoint}{\begin{center}
+\rule{0.5\textwidth}{.4pt}\\
+\vspace{1mm} 
+OPTIONAL STOP POINT\\
+\rule{0.5\textwidth}{.4pt}
+\end{center}}
+\newcommand{\uL}{$\mu$L}
+
+\newcommand{\Dilution}[4]{
+\begin{enumerate}
+\item{Vortex #2 stock}
+\item{Pipette #1\uL{} #2 into a PCR Tube}
+\item{Pipette #3\uL{} #4 into solution}
+\item{Vortex until mixed}
+%\item{Pipette $#2\mu L$ Water into solution}
+\end{enumerate}
+}
+
+%Well plate
+\newcommand{\wellplate}[2]{
+\getargsC{#1}
+\begin{tabular}{*{1}{>{\columncolor{blue!20}}l}|l|l|l|l|l|l|l|l|l|l|l|l|}
+\rowcolor{blue!20}%
+ & 1  & 2  & 3  & 4  & 5  & 6 & 7 & 8 & 9 & 10 & 11 & 12\\ \hline
+\ifdefined\argxii
+A & \argi & \argii & \argiii & \argiv & \argv & \argvi & \argvii & \argviii & \argix & \argx & \argxi & \argxii \\ \hline\fi
+\ifdefined\argxxiv
+B & \argxiii & \argxiv & \argxv & \argxvi & \argxvii & \argxviii & \argxix & \argxx & \argxxi & \argxxii & \argxxiii & \argxxiv \\ \hline\fi
+\ifdefined\argxxxvi
+C & \argxxv & \argxxvi & \argxxvii & \argxxviii & \argxxix & \argxxx & \argxxxi & \argxxxii & \argxxxiii & \argxxxiv & \argxxxv & \argxxxvi \\ \hline\fi
+\ifdefined\argxlviii
+D & \argxxxvii & \argxxxviii & \argxxxix & \argxl & \argxli & \argxlii & \argxliii & \argxliv & \argxlv & \argxlvi & \argxlvii & \argxlviii \\ \hline\fi
+\ifdefined\arglx
+E & \argxlix & \argl & \argli & \arglii & \argliii & \argliv & \arglv & \arglvi & \arglvii & \arglviii & \arglix & \arglx \\ \hline\fi
+\ifdefined\arglxxii
+F & \arglxi & \arglxii & \arglxiii & \arglxiv & \arglxv & \arglxvi & \arglxvii & \arglxviii & \arglxix & \arglxx & \arglxxi & \arglxxii \\ \hline\fi
+\ifdefined\arglxxxiv
+G & \arglxxiii & \arglxxiv & \arglxxv & \arglxxvi & \arglxxvii & \arglxxviii & \arglxxix & \arglxxx & \arglxxxi & \arglxxxii & \arglxxxiii & \arglxxxiv \\ \hline\fi
+\ifdefined\argxcvi
+H & \arglxxxv & \arglxxxvi & \arglxxxvii & \arglxxxviii & \arglxxxix & \argxc & \argxci & \argxcii & \argxciii & \argxciv & \argxcv & \argxcvi \\ \hline\fi
+\end{tabular}
+}
+
+\newcommand{\tdt}{Terminal Deoxynucleotidyl Transferase}
+\newcommand{\BdATP}{3'-O-(2-nitrobenzyl)-2'-Deoxyadenosine-5'-Triphosphate}
+\newcommand{\oligo}{oligonucleotide}
+\newcommand{\HPLC}{--PLACE HOLDER--}
+
+\begin{document}
+
+\maketitle
+
+\section*{Procedure Purpose}
+Catalyze the addition of d(N)TPs to the 3' hydroxyl terminating end of  sample oligonucleotides.
+
+\section*{Overview}
+In this procedure, we will add \tdt{}, buffer and nucleotides into solution before incubating in order to append dNTPs to the 3' hydroxyl terminating end of an oligonucleotide sample. 
+
+\section*{Safety Information} % Analytics HPLC
+\begin{safety}
+\begin{enumerate}
+\item{\tdt{} is toxic if inhaled. May cause cancer. Toxic to aquatic life with long lasting effects. Avoid breathing dust/fume/gas/mist/vapours/spray. Use personal protective equipment as required. \\If Inhaled: Remove victim to fresh air and keep at rest in a position comfortable for breathing. Dispose of contents/container in accordance with local/regional/national/international regulations.\cite{ThermoScientific2016}}
+\item{Working in a communal lab space is dangerous. Do not assume your fellow workers cleaned up sufficiently}
+\end{enumerate}
+\end{safety}
+\section*{Procedure}
+\begin{enumerate}
+\item{Pipette 1pmol oligonucleotide sample into 0.2mL PCR Tube.}
+\item{Pipette 4.0\uL{} 5X \tdt{} reaction buffer into PCR Tube.}
+\item{Dilute d(N)TP stock.}
+\Dilution{1}{100mM d(N)TP}{999}{Water}
+\item{Pipette 1\uL{} of d(N)TP dilute into PCR Tube.}
+\item{Gently pipette 1.5\uL{} \tdt{} (20 U/\uL{}) into PCR Tube.} %FIX THIS
+\item{Pipette nuclease free water into PCR Tube to a final volume of 20\uL{}.}
+\item{Incubate sample at 37\C{} for 15 minutes.}
+\item{Stop reaction by heating at 70\C{} for 10 minutes or by adding 2\uL{} 0.5M EDTA to the solution.\cite{Invitrogen2002}}
+
+\end{enumerate}
+\section{Notes}
+This procedure is largely based off of a Thermo Fisher procedure\cite{ThermoScientific2016}. In this procedure, we have a 1pmol of 3' hydroxyl terminating ends and 100pmol of d(N)TPs for a ratio of 100:1 nucleotides to 3' ends. Moreover, DNA and d(N)TPs can scale together for experimental ease in modified versions of this procedure. Additionally, the nucelotide to 3' hydroxyl terminating end ratio ranges from 60:1\cite{ThermoScientific2016} to 100000:1\cite{Invitrogen2002} indicating that there is not an exact ratio required for a reaction to take place. Further, while we have previously used quantities above 0.1nmol of DNA for our procedures, there is evidence\cite{Wostemeyer2014} that 1pmol of ssDNA can be visualized with SYBR Green II in agarose (and presumably polyacrylamide) gels. Finally, the syntax "d(N)TP" is used to denote the use of dATP, dGTP, dCTP or dTTP rather than a mix of dATP, dGTP, dCTP and dTTP, which is what "dNTP" is usually interpreted to mean.
+
+\bibliographystyle{ieeetr}
+\bibliography{biblio}
+\end{document}
