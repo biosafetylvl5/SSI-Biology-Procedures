@@ -1,0 +1,186 @@
+\documentclass[letterpaper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size, footer, indent and margins
+\usepackage[a4paper,top=2.5cm,bottom=2cm,left=2.25cm,right=2.25cm,marginparwidth=2.25cm]{geometry}
+\setlength\parindent{0pt}
+\setlength{\footskip}{55pt}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{readarray}
+\usepackage{verbatimbox}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{colortbl}
+\usepackage{libertine} 
+\usepackage{siunitx}
+
+
+% Safety Environment 
+\definecolor{safetyFrame}{HTML}{FFFFFF}
+\newenvironment{safety}{%
+\begin{tcolorbox}[width=\textwidth, colframe=safetyFrame, arc=1.5mm]
+}%
+{\end{tcolorbox}}
+
+
+% Footer
+\lfoot{\includegraphics[height=1.5cm]{1000x350-Horiz-Logo-WhiteRed-BlackText.png}}
+
+% Substitution Commands
+\newcommand{\tdt}{Terminal Deoxynucleotidyl Transferase}
+\newcommand{\C}{\degree{}C}
+\newcommand{\uL}{\micro{}L}
+\newcommand{\BdATP}{3'-O-(2-nitrobenzyl)-2'-dATP}
+
+%Custom Commands
+\newcommand{\B}[1]{\textbf{#1}}
+
+% Safety Info
+\newcommand{\SYBRI}{\item{\B{SYBR Green I} is a mutagen and can penetrate laboratory gloves in a relatively short period of time, please change your gloves in the event of contamination. See \url{http://www.sigmaaldrich.com/MSDS/MSDS/DisplayMSDSPage.do?country=US&language=en&productNumber=S9430&brand=SIAL} for more information on the specifics of SYBR Green I. 
+}}
+\newcommand{\ETBR}{\item{\B{Ethidium Bromide} is a \B{serious mutagen} and is \B{significantly carcinogenic}. If working with considerable amounts, a \B{fume hood and respirator} are warranted. For more information see \url{https://www.sciencelab.com/msds.php?msdsId=9927667}
+}}
+
+
+% Shortcuts
+
+%Stop Point (Optional)
+\newcommand{\stopPoint}{\begin{center}
+\rule{0.5\textwidth}{.4pt}\\
+\vspace{1mm} 
+OPTIONAL STOP POINT\\
+\rule{0.5\textwidth}{.4pt}
+\end{center}}
+ \usepackage{relsize}
+\newcommand{\RstopPoint}{\begin{center}
+\rule{0.5\textwidth}{.4pt}\\
+\vspace{1mm} 
+RECOMMENEDED STOP POINT\\
+\rule{0.5\textwidth}{.4pt}
+\end{center}}
+
+% Dilution Macro
+\newcommand{\Dilution}[4]{
+\subsection{#2}
+\begin{enumerate}
+\item{Vortex #2 stock}
+\item{Pipette #1\uL{} #2 into a PCR Tube}
+\item{Pipette #3\uL{} #4 into solution}
+\item{Vortex until mixed}
+%\item{Pipette $#2\mu L$ Water into solution}
+\end{enumerate}
+}
+
+% Gel Macro
+\newcommand{\gel}[4]{
+\begin{figure}[ht]
+\label{#3}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{#1}
+\includegraphics[width=0.45\textwidth]{#2}
+\caption{#3}
+\end{center}
+\subsection{#3 Analysis}
+#4
+\end{figure}
+}
+\usepackage{marvosym}
+
+% Well plate Macro
+\newcommand{\wellplate}[2]{
+\getargsC{#1}
+\begin{tabular}{*{1}{>{\columncolor{blue!20}}l}|l|l|l|l|l|l|l|l|l|l|l|l|}
+\rowcolor{blue!20}%
+ & 1  & 2  & 3  & 4  & 5  & 6 & 7 & 8 & 9 & 10 & 11 & 12\\ \hline
+\ifdefined\argxii
+A & \argi & \argii & \argiii & \argiv & \argv & \argvi & \argvii & \argviii & \argix & \argx & \argxi & \argxii \\ \hline\fi
+\ifdefined\argxxiv
+B & \argxiii & \argxiv & \argxv & \argxvi & \argxvii & \argxviii & \argxix & \argxx & \argxxi & \argxxii & \argxxiii & \argxxiv \\ \hline\fi
+\ifdefined\argxxxvi
+C & \argxxv & \argxxvi & \argxxvii & \argxxviii & \argxxix & \argxxx & \argxxxi & \argxxxii & \argxxxiii & \argxxxiv & \argxxxv & \argxxxvi \\ \hline\fi
+\ifdefined\argxlviii
+D & \argxxxvii & \argxxxviii & \argxxxix & \argxl & \argxli & \argxlii & \argxliii & \argxliv & \argxlv & \argxlvi & \argxlvii & \argxlviii \\ \hline\fi
+\ifdefined\arglx
+E & \argxlix & \argl & \argli & \arglii & \argliii & \argliv & \arglv & \arglvi & \arglvii & \arglviii & \arglix & \arglx \\ \hline\fi
+\ifdefined\arglxxii
+F & \arglxi & \arglxii & \arglxiii & \arglxiv & \arglxv & \arglxvi & \arglxvii & \arglxviii & \arglxix & \arglxx & \arglxxi & \arglxxii \\ \hline\fi
+\ifdefined\arglxxxiv
+G & \arglxxiii & \arglxxiv & \arglxxv & \arglxxvi & \arglxxvii & \arglxxviii & \arglxxix & \arglxxx & \arglxxxi & \arglxxxii & \arglxxxiii & \arglxxxiv \\ \hline\fi
+\ifdefined\argxcvi
+H & \arglxxxv & \arglxxxvi & \arglxxxvii & \arglxxxviii & \arglxxxix & \argxc & \argxci & \argxcii & \argxciii & \argxciv & \argxcv & \argxcvi \\ \hline\fi
+\end{tabular}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% End of Boiler Plate %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%   AKA YOU WRITE AFTER THIS POINT    %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Dilutions Worksheet} % CHANGE THIS
+\author{Written by \textbf{Lillian Zhu \& Michael Uttmark}\\ % CHANGE THIS 
+        For the Stanford Student Space Initiative Biology Subteam}
+\begin{document}
+\maketitle
+Knowing how to obtain the correct concentration of your reagents is extremely important! Your reaction will work best with the proper relative amounts of reagents.
+% Now for the _good_ stuff  
+\section*{The Basics}% CHANGE THIS
+\begin{enumerate} % THIS STARTS THE "STEP SECTION"
+\item{Concentration formulas generally follow this format:}
+$$
+\frac{\textrm{amount of substance}}{\textrm{volume of total mixture}}
+$$
+\item{Specifically, molarity is given by $\mathlarger{\frac{\textrm{moles solute}}{\textrm{liters of solution}}}$. The mole is a standard scientific unit of amount, abbreviated mol. Molarity is often denoted by M.}
+
+\item{A quick way to convert between concentrations is equating their amounts, giving the formula $M_1V_1 = M_2V_2$.}
+\item{And, one last thing: 1 nanoliter (nL) = $10^{-9}$ liters, 1 microliter (\uL{}) = $10^{-6}$ liters, 1 milliliter (mL) = $10^{-3}$ liters. Keep all of your units in terms of microliters for this worksheet.}
+\end{enumerate}
+
+\subsection*{Examples} 
+\begin{itemize}
+\item{Say you want to do a titration to verify an unknown concentration of base, but 5 M hydrochloric acid is too concentrated! What volume of 5 M acid do you need to obtain a 100 mL solution of 1 M HCl?\begin{flushright}\underline{\hspace{3cm}}\end{flushright}}
+\item{\textbf{Solution}: In 100 mL of the desired solution, you need 0.1 L * 1 M or 0.1 mol HCl. To get the volume of 5 M acid needed, divide this by the concentration, and you'll find you need 0.02 L or 20 mL.}
+\item{Let's change it up a little. You have a 4X enzyme mix, and need 1X in your final solution. How much do you need to add to 30 mL of your reaction solution\begin{flushright}\underline{\hspace{3cm}}\end{flushright}}
+\item{\textbf{Solution}: 1 part of 4X enzyme mix in 4 parts total solution will give you a final concentration of 1X—it's a division by 4. From this, the ratio of existing solution to enzyme mix is 3:1, thus you need to add 10 mL of the 4X mix into 30 mL of existing solution.}
+\end{itemize}
+\pagebreak{}
+
+\section*{Now you try!}
+Remember that individual components of a complicated solution can be considered separately; only the ratio of their amounts to the whole mixture are relevant.\\
+
+For today's experiment, we want a final reaction volume of 50 microliters/50 \uL{}. Work in groups to calculate the volumes of reagent needed for the PCR.
+
+\begin{enumerate}
+\item{You need to dilute the 10X Taq Buffer to 1X. It should comprise a tenth of the final volume. What volume Taq Buffer will you add?\begin{flushright}\underline{\hspace{3cm}}\end{flushright}}
+\item{From a stock of 2 mM dNTP mix, you'll want a final concentration of 200 \micro{}M.\\
+How much of the mix is needed?\begin{flushright}\underline{\hspace{3cm}}\end{flushright}}
+\item{You'll need 0.2 \micro{}M of each of the forward and reverse primers, which conveniently have the same initial concentration of 1 \micro{}M. How much of each primer will you need?\begin{flushright}\underline{\hspace{3cm}}\end{flushright}}
+\item{You have .1 ng per \uL{} DNA, and you need 0.3 ng total in your 50 \uL{} solution. How much should you add? Don't overthink this one!\begin{flushright}\underline{\hspace{3cm}}\end{flushright}}
+%\item{You will be given 10X SYBR Green stain, and you know the drill --- you need 1X. Handle this one with care! How much SYBR do you need?\begin{flushright}\underline{\hspace{3cm}}\end{flushright}}
+\item{Almost there! The last component is Taq polymerase. You have .25 U/\uL{}, and need 1.25 U total in your reaction mixture. How much Taq polymerase should you add?\begin{flushright}\underline{\hspace{3cm}}\end{flushright}}
+\item{Okay, now you've got everything you need! However, the total amount of liquid doesn't add up to 50. How much water do you need to top it off?\begin{flushright}\underline{\hspace{3cm}}\end{flushright}}
+\end{enumerate}
+\vspace{1.5in}
+\begin{center}
+\scalebox{5}{\Smiley{}}\\
+\vspace{.3cm}
+Congrats! You did it!
+\end{center}
+
+\end{document}

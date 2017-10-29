@@ -1,0 +1,304 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=2.5cm,bottom=2cm,left=2.25cm,right=2.25cm,marginparwidth=2.25cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+%My Junk
+\setlength{\footskip}{55pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{readarray}
+\usepackage{verbatimbox}
+
+%All File Formatting
+\setlength\parindent{0pt}
+
+%\usepackage[x11names]{xcolor}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{colortbl}
+\usepackage{libertine} 
+\usepackage{siunitx}
+
+
+%Special Section(s)
+%\colorlet{shadecolor}{yellow}%FF3232}
+\definecolor{safetyFrame}{HTML}{FFFFFF}
+\newenvironment{safety}{%
+\begin{tcolorbox}[width=\textwidth, colframe=safetyFrame, arc=1.5mm]
+}%
+{\end{tcolorbox}}
+
+
+%Footer
+\lfoot{\includegraphics[height=1.5cm]{1000x350-Horiz-Logo-WhiteRed-BlackText.png}}
+
+\title{The Long Weekend: Day 13 Review Analysis}
+\author{Written by \textbf{Michael Uttmark}\\
+		Checked by \textbf{Alan Tomusiak and Cynthia Hao}\\
+        For the Stanford Student Space Initiative Biology Sub-team}
+
+\newcommand{\tdt}{Terminal Deoxynucleotidyl Transferase}
+
+%Custom Commands
+\newcommand{\C}{\degree C}
+\newcommand{\B}[1]{\textbf{#1}}
+\newcommand{\stopPoint}{\begin{center}
+\rule{0.5\textwidth}{.4pt}\\
+\vspace{1mm} 
+OPTIONAL STOP POINT\\
+\rule{0.5\textwidth}{.4pt}
+\end{center}}
+\newcommand{\uL}{\micro{}L}
+
+
+
+\newcommand{\Dilution}[4]{
+\subsection{#2}
+\begin{enumerate}
+\item{Vortex #2 stock}
+\item{Pipette #1\uL{} #2 into a PCR Tube}
+\item{Pipette #3\uL{} #4 into solution}
+\item{Vortex until mixed}
+%\item{Pipette $#2\mu L$ Water into solution}
+\end{enumerate}
+}
+
+%Well plate
+\newcommand{\wellplate}[2]{
+\getargsC{#1}
+\begin{tabular}{*{1}{>{\columncolor{blue!20}}l}|l|l|l|l|l|l|l|l|l|l|l|l|}
+\rowcolor{blue!20}%
+ & 1  & 2  & 3  & 4  & 5  & 6 & 7 & 8 & 9 & 10 & 11 & 12\\ \hline
+\ifdefined\argxii
+A & \argi & \argii & \argiii & \argiv & \argv & \argvi & \argvii & \argviii & \argix & \argx & \argxi & \argxii \\ \hline\fi
+\ifdefined\argxxiv
+B & \argxiii & \argxiv & \argxv & \argxvi & \argxvii & \argxviii & \argxix & \argxx & \argxxi & \argxxii & \argxxiii & \argxxiv \\ \hline\fi
+\ifdefined\argxxxvi
+C & \argxxv & \argxxvi & \argxxvii & \argxxviii & \argxxix & \argxxx & \argxxxi & \argxxxii & \argxxxiii & \argxxxiv & \argxxxv & \argxxxvi \\ \hline\fi
+\ifdefined\argxlviii
+D & \argxxxvii & \argxxxviii & \argxxxix & \argxl & \argxli & \argxlii & \argxliii & \argxliv & \argxlv & \argxlvi & \argxlvii & \argxlviii \\ \hline\fi
+\ifdefined\arglx
+E & \argxlix & \argl & \argli & \arglii & \argliii & \argliv & \arglv & \arglvi & \arglvii & \arglviii & \arglix & \arglx \\ \hline\fi
+\ifdefined\arglxxii
+F & \arglxi & \arglxii & \arglxiii & \arglxiv & \arglxv & \arglxvi & \arglxvii & \arglxviii & \arglxix & \arglxx & \arglxxi & \arglxxii \\ \hline\fi
+\ifdefined\arglxxxiv
+G & \arglxxiii & \arglxxiv & \arglxxv & \arglxxvi & \arglxxvii & \arglxxviii & \arglxxix & \arglxxx & \arglxxxi & \arglxxxii & \arglxxxiii & \arglxxxiv \\ \hline\fi
+\ifdefined\argxcvi
+H & \arglxxxv & \arglxxxvi & \arglxxxvii & \arglxxxviii & \arglxxxix & \argxc & \argxci & \argxcii & \argxciii & \argxciv & \argxcv & \argxcvi \\ \hline\fi
+\end{tabular}
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Procedure Purpose}
+To determine if reagents planned for use in a possible MVP (Minimally Viable Product) launch are viable after being left in solution for an extended period of time. 
+
+\section{Overview}
+The reagents will be removed from various storage temperatures (room temp ~23\C, ~-4\C\: and -20\C) and check for predicted florescence. They then will be combined with their “missing” components needed in order to preform a full TdT homopolymer extension. At this point, 6\uL{} will be removed, heat denatured at 95\C, and stored at -20\C\: for future use. The samples will then be incubated and then heat denatured. The samples will then be examined via gel electrophoresis.\\
+
+\section{Safety Information}
+\begin{safety}
+\begin{enumerate}
+\item{\B{SYBR Green I} is a mutagen and can penetrate laboratory gloves in a relatively short period of time, please change your gloves in the event of contamination. See \url{http://www.sigmaaldrich.com/MSDS/MSDS/DisplayMSDSPage.do?country=US&language=en&productNumber=S9430&brand=SIAL} for more information on the specifics of SYBR Green I. 
+}
+\item{\B{Ethidium Bromide} is a \B{serious mutagen} and is \B{significantly carcinogenic}. If working with considerable amounts, a \B{fume hood and respirator} are warranted. For more information see \url{https://www.sciencelab.com/msds.php?msdsId=9927667}
+}
+\item{Working in a communal lab space is dangerous. Do not assume your fellow workers cleaned up sufficiently}
+\end{enumerate}
+\end{safety}
+\section{Procedure}
+\begin{enumerate}
+\item{Remove the control samples from the room temperature, fridge and freezer storage.}
+\item{Dispose of \B{sample J} from all three groups in the \B{Solid Waste Disposal}. (\B{Contains Ethidium Bromide})}
+\item{Relabel samples if labels are no longer clear}
+\item{Pipette samples into 96 well plate(s) in the order displayed below in Figure \ref{tab:wellplate}.
+
+\begin{figure}
+\begin{center}
+\wellplate{A1 H$_2$O A2 H$_2$O A3 H$_2$O . . . . . .
+		   B1 H$_2$O B2 H$_2$O B3 H$_2$O . . . . . .
+		   C1 H$_2$O C2 H$_2$O C3 H$_2$O . . . . . .
+	   	   D1 H$_2$O D2 H$_2$O D3 H$_2$O . . . . . .
+		   E1 H$_2$O E2 H$_2$O E3 H$_2$O . . . . . .
+		   F1 H$_2$O F2 H$_2$O F3 H$_2$O . . . . . .
+		   G1 H$_2$O G2 H$_2$O G3 H$_2$O . . . . . .
+		   H1 I1 H2 I2 H3 I3 . . . . . .}
+
+\label{tab:wellplate}
+\caption{96 Well Plate Sample Layout}
+ (1: Room Temp, 2: -4\C{}, 3: 20\C{})
+\end{center}
+\end{figure}
+%\end{table}
+}
+\item{Run fluorescence tests using well plate viewer (Gain=50)}
+\item{Pipette samples back into PCR tube}
+\stopPoint
+\item{Pipette the following reagents into PCR tubes as described in }
+
+
+\begin{figure}[ht]
+\begin{center}\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+        &TdT             & Sybr          & Primer 1        & Primer 2 & 5X TdT Buffer     & dTTPs & Water & Ethidium Bromide \\ \hline
+A       & \texttimes{}              & \texttimes{}             & \texttimes{}               & \texttimes{}                 & \texttimes{}     & 1\uL{}   & 15.5\uL{}           & N/A \\ \hline
+B       & \texttimes{}              & \texttimes{}             & 1.25\uL{}\,\textasteriskcentered{}  & 1.25\uL{}    {}\,\textasteriskcentered{} & \texttimes{}     & 1\uL{}   & 15.5\uL{}           & N/A \\ \hline
+C       & \texttimes{}              & 1\uL{}\,\textasteriskcentered{}   & 1.25\uL{}\,\textasteriskcentered{}  & 1.25\uL{}    {}\,\textasteriskcentered{} & \texttimes{}     & 1\uL{}   & 15.5\uL{}           & N/A \\ \hline
+D       & \texttimes{}              & 1\uL{}\,\textasteriskcentered{}   & 1.25\uL{}\,\textasteriskcentered{}  & 1.25\uL{}    {}\,\textasteriskcentered{} & \texttimes{}     & 1\uL{}   & 15.5\uL{}           & N/A \\ \hline
+E       & 1\uL{}           & \texttimes{}             & 1.25\uL{}\,\textasteriskcentered{}  & 1.25\uL{}    {}\,\textasteriskcentered{} & 5\uL{}   & \texttimes{}     & 15.5\uL{}           & N/A \\ \hline
+F       & 1\uL{}           & \texttimes{}             & \texttimes{}               & \texttimes{}                 & 5\uL{}   & \texttimes{}     & 15.5\uL{}           & N/A \\ \hline
+G       & \texttimes{}              & \texttimes{}             & \texttimes{}               & \texttimes{}                 & \texttimes{}     & \texttimes{}     & 15.5\uL{}           & N/A \\ \hline
+H       & \texttimes{}              & \texttimes{}             & \texttimes{}               & \texttimes{}                 & \texttimes{}     & \texttimes{}     & 15.5\uL{}           & N/A \\ \hline
+I       & 1\uL{}           & 1\uL{}\,\textasteriskcentered{}   & 1.25\uL{}\,\textasteriskcentered{}  & 1.25\uL{}    {}\,\textasteriskcentered{} & 5\uL{}   & 1\uL{}   & \texttimes{}                & N/A \\ \hline
+J       & 1\uL{}           & N/A           & 1.25\uL{}\,\textasteriskcentered{}  & 1.25\uL{}    {}\,\textasteriskcentered{} & 5\uL{}   & \texttimes{}     & 15.5\uL{}           & \texttimes{}   \\ \hline
+\end{tabular}
+\caption{Pipetting Instructions for PCR tubes}
+\label{table:instOne}
+\end{center}
+Note: {}\,\textasteriskcentered{} indicates the need for a dilution from stock, “\B{\texttimes{}}” indicates a reagent already present. See following instructions for dilutions.
+
+Note: The dNTPs were originally supposed to be dTTPs, but due to human error, they were not. This is reflected in Figure \ref{table:instOne}.
+\end{figure}
+
+\section*{Dilutions}
+\Dilution{1}{SYBR Green I}{9}{Water}
+\Dilution{2.5}{Primer 1}{22.5}{Water}
+\Dilution{2.5}{Primer 2}{22.5}{Water}
+
+\item{Incubate samples at 35\C{} for 60min}
+\item{Stop the reaction by bringing the solution to 95\C{} for 10 minutes. }
+\item{Then, bring to 2\C{} for 1 min for handling}
+\stopPoint
+\item{Pipette samples A-I from all nine groups into 96 well plate(s)}
+\item{Run florescence tests using well plate viewer}
+\stopPoint
+\item{Prepare Agarose (Use Cobalt Chloride as a buffer for Gel)
+\begin{enumerate}
+    \item{To volume 80mL Buffer, add 2.2g Agarose (2.75\% Gel).}
+    \item{Add 8\uL{} of SYBR Green to Agarose once lukewarm}
+    \item{Refill Uytengsu Buffer stock}
+    \end{enumerate}
+}
+
+\item{Prepare Primer Mix
+\begin{enumerate}
+    \item{Pipette 1\uL{} Primer 1 to PCR tube}
+    \item{Pipette 1\uL{} Primer 2 to solution }
+    \item{Pipette 78\uL{} Water to solution}
+    \item{Vortex to Mix}
+    \end{enumerate}
+    }
+\item{Plan Sample location in gels (see tables below)}
+\item{Add Ladder to Gel  (1\uL{} of loaded solution)}
+\item{Add samples and Primer Mix to gel (5\uL{} sample + 1\uL{} Loading dye => 5\uL{} of loaded solution)}
+\item{Run Gel at 100V for 60 minutes}
+\item{Analyze Gel on Gel Viewer}
+\item{Post pictures to SSI Slack}
+\end{enumerate}
+\section*{Stop Procedure}
+\begin{enumerate}
+\item{Pipette samples into PCR tubes if not already contained in an appropriate manner}
+\item{Label containers}
+\item{Freeze samples at -20\C{}}
+\end{enumerate}
+
+\begin{figure}[ht]
+\addvbuffer[{0mm} \baselineskip]{\begin{tabular}{|l|l|l|l|l|}
+\hline
+Sample location, left to right     & Gel 1 (Room Temp) & Gel 2 (-4\C{})	 & Gel 3  (-20\C{}) & Gel 4 (All)  \\ \hline
+1                                  & Primer Mix        & Primer Mix		 & Primer Mix 		& Ladder       \\ \hline
+2                                  & A1        		   & A2              & A3         		& Ladder \& I1 \\ \hline
+3                                  & B1       		   & B2         	 & B3      		    & I2           \\ \hline
+4                                  & C1   	 		   & C2         	 & C3       		& I3           \\ \hline
+5                                  & D1       		   & D2        	 	 & D3      		    & Primer Mix   \\ \hline
+6                                  & E1      		   & E2         	 & E3       		&              \\ \hline
+7                                  & F1      		   & F2         	 & F3      		    &              \\ \hline
+8                                  & G1      		   & G2        	     & G3       		&              \\ \hline
+9                                  & H1      		   & H2         	 & H3       		&              \\ \hline
+10                                 & Ladder  		   & Ladder     	 & Ladder     & Ladder             \\ \hline
+\end{tabular}} \\1: Samples stored at room temperature, 2: Samples stored at -4\C{}, 3: Samples stored at -20\C{}. For a detailed description of the gels, see section \ref{sec:gelAnalysis}: Gels \& Accompanying Analysis.
+\caption{Gel Table}
+\end{figure}
+
+\section{Overall Analysis}
+
+These data gathered by this experiment support the conclusion that the conditions present in samples A-C may result in the degradation of DNA over relatively short periods of time (\~13 days) at room temperature, -4\C{} and -20\C{}. However, the conditions in samples A-C still seem to be conducive to \tdt{} and it's continued activity after short periods of time at room temperature, -4\C{} and -20\C{}. Further, there seems to be evidence that, while the results from samples D, F and G are faint (in all strata), the conditions present in samples D, F and G seem to be conducive to \tdt{} and it's continued activity after short periods of time at room temperature, -4\C{} and -20\C{}. Nothing can be said about samples E and H from any of the gels. Further, these data support the hypothesis that \tdt{} works better when stored at -20\C{} rather than -4\C{} and better at -4\C{} than at room temperature (this relation is transitive). However, the quality control samples (the Is) indicate that there was a measurable amount of contamination from some source, probably human error. As such, while the results from A-C still seem to be indicative of truth (due to their strong signal and consistent trends), results derived from samples D, F and G are reasonably considered to be questionable and will need further verification in the future if their implications become paramount.
+
+\section{Gels \& Accompanying Analysis}
+\label{sec:gelAnalysis}
+Continued on next page.
+
+\newcommand{\gel}[4]{
+\begin{figure}[ht]
+\label{#3}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{#1}
+\includegraphics[width=0.45\textwidth]{#2}
+\caption{#3}
+\end{center}
+\subsection{#3 Analysis}
+#4
+\end{figure}
+}
+\gel{1_1-tlw13.png}{1_2-tlw13.png}{Gel 1}{
+In this gel, Gel 1, from left to right, we have Primer mix, A1-H1 and a reference 1kb Ladder. As a reminder, samples A1-H1 were stored at room temperature in the dark for 13 days.\\
+
+In samples A1 and C1 there are indications that they contain DNA shorter than the primer mix. However, since the only DNA input into A1 and C1 is the same DNA in the primer mix, this leads us to the possible conclusion that the DNA partially degraded sometime before this gel. While it is possible that this happened whilst it was being handled, that would be inconsistent with our past results. Further, if this was the case, we would should see shortening of all the samples (which we do not). As such, it seems reasonable to conclude that the shortening of the DNA occurred during the 13 days of storage at room temperature.\\
+
+Further, in samples A1, B1, F1, and G1 we see extended DNA. This is strong evidence that the \tdt{} in these samples remained viable. (There is extending in samples C1 and D1 as well, but the \tdt{} in these samples was added after the 13 days.)\\
+
+Additionally, we saw much more DNA present in samples A1-C1 than samples D1-H1 (some of which (E1 and H1) are completely invisible) which is most likely due to human error. As such, most comparisons between A-C samples and D-H samples will most likely result in null conclusions at best, and will therefore be avoided.\\
+
+In conclusion, this gel supports the conclusion that the conditions present in samples A1-C1 may result in the degradation of DNA over relatively short periods of time (\~13 days) at room temperature. However, the conditions in samples A1-C1 still seem to be conducive to \tdt{} and it's continued activity after short periods of time at room temperature. Further, there seems to be evidence that, while the results from samples D1, F1 and G1 are vague, the conditions present in samples D1, F1 and G1 seem to be conducive to \tdt{} and it's continued activity after short periods of time at room temperature. Nothing can be said about samples E1 and H1 from this gel. 
+}
+
+
+\gel{2_1-tlw13.png}{2_2-tlw13.png}{Gel 2}{
+In this gel, Gel 2, from left to right, we have (similarly to Gel 1) Primer mix, A2-H2 and a reference 1kb Ladder. As a reminder, samples A2-H2 were stored at -4\C{} in the dark for 13 days.\\
+
+In this gel, there is more extension of all visible primers (all except G2 and H2). This indicates that \tdt{} works better when stored at -4\C{} rather than room temperature. 
+
+In samples A2 and C2 there are indications similar to those in Gel 1 that they contain DNA shorter than the primer mix. However, the indications are less pronounced in Gel 2 than in Gel 1. This might be due to the more effective \tdt{} behavior (described above) Similar to the above gel, especially when one takes \tdt{} variant behavior into account, it seems reasonable to conclude that the shortening of the DNA occurred during the 13 days of storage at -4\C{}.\\
+
+Additionally, we saw much more DNA present in samples A2-C2 than samples D2-H2 (some of which (E2 and H2) are completely invisible) which is most likely due to human error. As such, most comparisons between A-C samples and D-H samples will most likely result in null conclusions at best, and will therefore be avoided.\\
+
+In conclusion, this gel supports the conclusion that the conditions present in samples A2-C2 may result in the degradation of DNA over relatively short periods of time (\~13 days) at -4\C{}. However, the conditions in samples A2-C2 still seem to be conducive to \tdt{} and it's continued activity after short periods of time at -4\C{}. Further, there seems to be evidence that, while the results from samples D2, F2 and G2 are vague, the conditions present in samples D2, F2 and G2 seem to be conducive to \tdt{} and it's continued activity after short periods of time at -4\C{}. Nothing can be said about samples E2 and H2 from this gel. Further, this gel supports the hypothesis that \tdt{} works better when stored at -4\C{} as opposed to room temperature.
+}
+
+\gel{3_1-tlw13.png}{3_2-tlw13.png}{Gel 3}{
+In this gel, Gel 3, from left to right, we have (similarly to Gel 1 and Gel 2) Primer mix, A3-H3 and a reference 1kb Ladder. As a reminder, samples A3-H3 were stored at -20\C{} in the dark for 13 days.\\
+
+In this gel, there is more extension of all visible primers (all except G3 and H3). This indicates that \tdt{} works better when stored at -20\C{} rather than -4\C{} or room temperature.
+
+In sample C3 there are indications similar to those in Gel 1 that it contains DNA shorter than the primer mix. However, the indications are less pronounced in Gel 3 than in Gel 1 or Gel 2. This might be due to the more effective \tdt{} behavior (described above) Similar to the above gels, especially when one takes \tdt{} variant behavior into account, it seems reasonable to conclude that the shortening of the DNA occurred during the 13 days of storage at -20\C{}.\\
+
+Additionally, we saw much more DNA present in samples A3-C3 than samples D3-H3 (some of which (E3 and H3) are completely invisible) which is most likely due to human error. As such, most comparisons between A-C samples and D-H samples will most likely result in null conclusions at best, and will therefore be avoided.\\
+
+In conclusion, this gel supports the conclusion that the conditions present in samples A3-C3 may result in the degradation of DNA over relatively short periods of time (\~13 days) at -20\C{}. However, the conditions in samples A3-C3 still seem to be conducive to \tdt{} and it's continued activity after short periods of time at -20\C{}. Further, there seems to be evidence that, while the results from samples D3, F3 and G3 are faint, the conditions present in samples D2, F2 and G2 seem to be conducive to \tdt{} and it's continued activity after short periods of time at -20\C{}. Nothing can be said about samples E2 and H2 from this gel. Further, this gel supports the hypothesis that \tdt{} works better when stored at -20\C{} rather than -4\C{} or room temperature.
+}
+
+\gel{4_1-tlw13.png}{4_2-tlw13.png}{Gel 4}{
+In this gel, Gel 4, from left to right, we relevantly have Ladder, Ladder \& I1, I2, I3 and Primer Mix.\\
+
+It is immediately apparent that this gel has three ladders. On on the far left, and two on the far right. Only the ladders on the right should be used, as the ladder on the far left was placed in a deformed area of the gel.\\
+
+In this gel, there is more extension of all visible primers. This indicates that our control's weren't extremely contaminated. However, there is some variance, especially in sample I2, which does call our results into question. However, overall, these samples support the validity of the above conclusions. 
+}
+
+\end{document}

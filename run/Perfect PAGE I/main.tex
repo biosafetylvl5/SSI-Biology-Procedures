@@ -1,0 +1,287 @@
+\documentclass[letterpaper]{article}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%                  HI!                    %%%%
+%%%%        THIS IS THE SSI-BIOLOGY			 %%%%
+%%%%      GENERIC PROCEDURE TEMPLATE :) 	 %%%%
+%%%%      IT MIGHT LOOK SCARY, BUT IT'S 	 %%%%
+%%%%           PRETTY EASY TO USE 			 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%      RIGHT NOW YOU'RE LOOKING AT BOILERPLATE     %%%%
+%%%%  THAT IS, THINGS YOU DON'T HAVE TO CHANGE (EVER) %%%%
+%%%%     SCROLL DOWN FOR THE THINGS YOU SHOULD PAY    %%%%
+%%%%    ATTENTION TO :)  (YOU'LL KNOW WHEN TO STOP)   %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size, footer, indent and margins
+\usepackage[a4paper,top=2.5cm,bottom=2cm,left=2.25cm,right=2.25cm,marginparwidth=2.25cm]{geometry}
+\setlength\parindent{0pt}
+\setlength{\footskip}{55pt}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{readarray}
+\usepackage{verbatimbox}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{colortbl}
+\usepackage{libertine} 
+\usepackage{siunitx}
+
+
+% Safety Environment 
+\definecolor{safetyFrame}{HTML}{FFFFFF}
+\newenvironment{safety}{%
+\begin{tcolorbox}[width=\textwidth, colframe=safetyFrame, arc=1.5mm]
+}%
+{\end{tcolorbox}}
+
+
+% Footer
+\lfoot{\includegraphics[height=1.5cm]{1000x350-Horiz-Logo-WhiteRed-BlackText.png}}
+
+% Substitution Commands
+\newcommand{\tdt}{Terminal Deoxynucleotidyl Transferase}
+\newcommand{\C}{\degree{}C}
+\newcommand{\uL}{\micro{}L}
+\newcommand{\BdATP}{3'-O-(2-nitrobenzyl)-2'-dATP}
+
+%Custom Commands
+\newcommand{\B}[1]{\textbf{#1}}
+
+% Safety Info
+\newcommand{\SYBRI}{\item{\B{SYBR Green I} is a mutagen and can penetrate laboratory gloves in a relatively short period of time, please change your gloves in the event of contamination. See \url{http://www.sigmaaldrich.com/MSDS/MSDS/DisplayMSDSPage.do?country=US&language=en&productNumber=S9430&brand=SIAL} for more information on the specifics of SYBR Green I. 
+}}
+\newcommand{\ETBR}{\item{\B{Ethidium Bromide} is a \B{serious mutagen} and is \B{significantly carcinogenic}. If working with considerable amounts, a \B{fume hood and respirator} are warranted. For more information see \url{https://www.sciencelab.com/msds.php?msdsId=9927667}
+}}
+
+
+% Shortcuts
+
+%Stop Point (Optional)
+\newcommand{\stopPoint}{\begin{center}
+\rule{0.5\textwidth}{.4pt}\\
+\vspace{1mm} 
+OPTIONAL STOP POINT\\
+\rule{0.5\textwidth}{.4pt}
+\end{center}}
+
+\newcommand{\RstopPoint}{\begin{center}
+\rule{0.5\textwidth}{.4pt}\\
+\vspace{1mm} 
+RECOMMENDED STOP POINT\\
+\rule{0.5\textwidth}{.4pt}
+\end{center}}
+
+% Dilution Macro
+\newcommand{\Dilution}[4]{
+\subsection{#2}
+\begin{enumerate}
+\item{Vortex #2 stock}
+\item{Pipette #1\uL{} #2 into an appropriate Tube}
+\item{Pipette #3\uL{} #4 into solution}
+\item{Vortex until mixed}
+%\item{Pipette $#2\mu L$ Water into solution}
+\end{enumerate}
+}
+
+% Gel Macro
+\newcommand{\gel}[4]{
+\begin{figure}[ht]
+\label{#3}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{#1}
+\includegraphics[width=0.45\textwidth]{#2}
+\caption{#3}
+\end{center}
+\subsection{#3 Analysis}
+#4
+\end{figure}
+}
+
+% Well plate Macro
+\newcommand{\wellplate}[2]{
+\getargsC{#1}
+\begin{tabular}{*{1}{>{\columncolor{blue!20}}l}|l|l|l|l|l|l|l|l|l|l|l|l|}
+\rowcolor{blue!20}%
+ & 1  & 2  & 3  & 4  & 5  & 6 & 7 & 8 & 9 & 10 & 11 & 12\\ \hline
+\ifdefined\argxii
+A & \argi & \argii & \argiii & \argiv & \argv & \argvi & \argvii & \argviii & \argix & \argx & \argxi & \argxii \\ \hline\fi
+\ifdefined\argxxiv
+B & \argxiii & \argxiv & \argxv & \argxvi & \argxvii & \argxviii & \argxix & \argxx & \argxxi & \argxxii & \argxxiii & \argxxiv \\ \hline\fi
+\ifdefined\argxxxvi
+C & \argxxv & \argxxvi & \argxxvii & \argxxviii & \argxxix & \argxxx & \argxxxi & \argxxxii & \argxxxiii & \argxxxiv & \argxxxv & \argxxxvi \\ \hline\fi
+\ifdefined\argxlviii
+D & \argxxxvii & \argxxxviii & \argxxxix & \argxl & \argxli & \argxlii & \argxliii & \argxliv & \argxlv & \argxlvi & \argxlvii & \argxlviii \\ \hline\fi
+\ifdefined\arglx
+E & \argxlix & \argl & \argli & \arglii & \argliii & \argliv & \arglv & \arglvi & \arglvii & \arglviii & \arglix & \arglx \\ \hline\fi
+\ifdefined\arglxxii
+F & \arglxi & \arglxii & \arglxiii & \arglxiv & \arglxv & \arglxvi & \arglxvii & \arglxviii & \arglxix & \arglxx & \arglxxi & \arglxxii \\ \hline\fi
+\ifdefined\arglxxxiv
+G & \arglxxiii & \arglxxiv & \arglxxv & \arglxxvi & \arglxxvii & \arglxxviii & \arglxxix & \arglxxx & \arglxxxi & \arglxxxii & \arglxxxiii & \arglxxxiv \\ \hline\fi
+\ifdefined\argxcvi
+H & \arglxxxv & \arglxxxvi & \arglxxxvii & \arglxxxviii & \arglxxxix & \argxc & \argxci & \argxcii & \argxciii & \argxciv & \argxcv & \argxcvi \\ \hline\fi
+\end{tabular}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% End of Boiler Plate %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%   AKA YOU WRITE AFTER THIS POINT    %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{Perfect PAGE I} % CHANGE THIS
+\author{Written by \textbf{Alan Tomusiak}\\ % CHANGE THIS 
+		Checked by \textbf{N/A}\\ % CHANGE THIS
+        For the Stanford Student Space Initiative Biology Team}
+
+\begin{document}
+
+\maketitle
+
+\section{Procedure Purpose} % CHANGE THIS
+Determine whether pre-cast 15\% TBE-Urea gels are capable of single nucleotide resolution, and which reaction conditions enable such detection.
+
+\section{Overview} % CHANGE THIS
+Goal is to decisively answer whether pre-cast gels are adequate for our purposes of single base-pair resolution ideally in no more than two experiments, if not one. This will allow us to either know precisely how to run a gel to allow such narrow detection or otherwise shift focus to other methods.
+\\
+% Safety First! ALSO, % CHANGE THIS
+\section{Safety Information}
+\begin{safety}
+\begin{enumerate}
+\item{Sybr Gold is a carcinogen. Handle with caution.}
+\item{Working in a communal lab space is dangerous. Do not assume your fellow workers cleaned up sufficiently}
+\end{enumerate}
+\end{safety}
+
+\section{Materials}
+\begin{enumerate}
+\item{Three pre-cast 15\% PAGE Urea gels.}
+\item{15-Mer DNA Oligo}
+\item{16-Mer DNA Oligo}
+\item{25-Mer DNA Oligo}
+\item{26-Mer DNA Oligo}
+\item{35-Mer DNA Oligo}
+\item{36-Mer DNA Oligo}
+\item{Invitrogen Gel Loading Buffer II}
+\item{Nuclease-free Water}
+\item{.5X TBE Buffer}
+\end{enumerate}
+\section{Dilutions}
+\begin{enumerate}
+\item{Basic DNA Oligo dilution - suspend each oligo in an appropriate amount of water to achieve 100uM concentration. Vortex and mix.}
+\item{15-Mer 2000ng- Stock solution should have 457 nanograms of DNA per microliter. Pipette 8.8 uL of stock primer into 91.2 uL of water. Vortex and mix. Concentration is 40ng/uL - label appropriately.}
+\item{16-Mer 2000ng- Stock solution should have 505 nanograms of DNA per microliter. Pipette 8 uL of stock primer into 92 uL of water. Vortex and mix. Concentration is 40ng/uL - label appropriately.}
+\item{25-Mer 2000ng - Stock solution should have 761 nanograms of DNA per microliter. Pipette 5.2 uL of stock primer into 94.8 uL of water. Vortex and mix. Concentration is 40ng/uL - label appropriately.}
+\item{26-Mer 2000ng - Stock solution should have 786 nanograms of DNA per microliter. Pipette 5.2 uL of stock primer into 94.8 uL of water. Vortex and mix. Concentration is 40ng/uL - label appropriately.}
+\item{35-Mer 2000ng - Stock solution should have 1070 nanograms of DNA per microliter. Pipette 3.8 uL of stock primer into 96.2 uL of water. Vortex and mix. Concentration is 40ng/uL - label appropriately.}
+\item{36-Mer 2000ng - Stock solution should have 1103 nanograms of DNA per microliter. Pipette 3.6 uL of stock primer into 96.4 uL of water. Vortex and mix. Concentration is 40ng/uL - label appropriately.}
+\item{Custom DNA Ladder - Add 8.8 uL of 15-Mer stock, 8 uL of 16-Mer stock, 5.2 uL of 25-Mer stock, 5.2 uL of 26-Mer stock, 3.8 uL of 35-Mer stock, and 3.6 uL of 36-Mer stock to 65.4 uL of water. Concentration is 240ng/uL - label appropriately. }
+\end{enumerate}
+
+% Now for the _good_ stuff  
+\section{Procedure}% CHANGE THIS
+
+\begin{enumerate} % THIS STARTS THE "STEP SECTION"
+\item{Prepare all above dilutions and the custom DNA ladder.}
+\stopPoint
+\item{Prepare three PAGE gels. Rinse each well with 15 uL of .5X TBE buffer. Allow to pre-run for 20 minutes prior to starting the protocol.} % EACH STEP IS AN "ITEM" AND MUST BE IN A \item{}. aka, \item{do the thing}
+\item{On to a piece of parafilm, pipette 5 uL of Gel Loading Buffer II in 24 different locations, in a grid with three rows and eight columns.}
+\item{In the first column, pipette .5 uL of 10 bp ladder onto the loading buffer. Pipette .5 uL of TBE buffer onto those mixtures. Mix thoroughly.}
+\item{In the remaining columns, pipette 5 uL ladder and each oligo in order of increasing size. Mix thoroughly with the loading buffer.}
+\item{Once the gels have finished pre-running, load each 10 uL from each mix in each row onto each gel correspondingly. Run the first gel on 200V for 20 minutes, the second for 35 minutes, and the third for 50 minutes.}
+\item{Post-stain each gel for 30 minutes in 1X Sybr Gold, and use the gel imager to interpret results.}
+\end{enumerate}
+
+\section{Interpretation}% CHANGE THIS
+
+\begin{enumerate}
+\item{The results should provide a range of 15 minute increments for how long to run the gel. Further experimentation may be required to provide a more narrow 5-minute time interval. It may also be the case that the amount of DNA loaded is either inadequate or excessive, which should be altered in the subsequent experiment.}
+\end{enumerate}
+
+
+%\stopPoint
+%\item{Pipette samples A-I from all nine groups into 96 well plate(s)}
+%\item{Run fluorescence tests using well plate viewer}
+\begin{comment}
+\stopPoint
+\item{Prepare Agarose (Use Cobalt Chloride as a buffer for Gel)
+\begin{enumerate} % Sub step sections, for steps in steps
+    \item{To volume 80mL Buffer, add 2.2g Agarose (2.75\% Gel).}
+    \item{Add 8\uL{} of SYBR Green to Agarose once lukewarm}
+    \item{Refill Uytengsu Buffer stock}
+    \end{enumerate}
+}
+
+\item{Prepare Primer Mix
+\begin{enumerate}
+    \item{Pipette 1\uL{} Primer 1 to PCR tube}
+    \item{Pipette 1\uL{} Primer 2 to solution }
+    \item{Pipette 78\uL{} Water to solution}
+    \item{Vortex to Mix}
+    \end{enumerate}
+    }
+\item{Plan Sample location in gels (see tables below)}
+\item{Add Ladder to Gel  (1\uL{} of loaded solution)}
+\item{Add samples and Primer Mix to gel (5\uL{} sample + 1\uL{} Loading dye => 5\uL{} of loaded solution)}
+\item{Run Gel at 100V for 60 minutes}
+\item{Analyze Gel on Gel Viewer}
+\item{Post pictures to SSI Slack}
+\end{comment}
+
+% Stop Procedure
+%\section*{Stop Procedure}
+%\begin{enumerate}
+%\item{Pipette samples into PCR tubes if not already contained in an appropriate manner}
+%\item{Label containers}
+%\item{Freeze samples at -20\C{}}
+%\end{enumerate}
+
+\begin{comment} %This section is for analysis afterwards (aka we can ignore this for now)
+
+%Summary Analysis
+\section{Overall Analysis}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales purus a ex pulvinar pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean purus lectus, tincidunt eget purus vitae, laoreet vulputate diam. Nam consequat ac libero sit amet accumsan. Proin vitae augue eget urna venenatis convallis sed quis odio. Proin vitae maximus augue. Cras posuere commodo nulla vel ultricies. Fusce consequat nisl nibh, et venenatis dui ullamcorper in.
+
+Proin viverra felis in sem interdum porttitor. Duis eu quam nec elit dignissim pretium. In eleifend at eros sed pretium. Suspendisse nec velit ac ipsum dapibus ornare. Nunc auctor rhoncus enim quis tincidunt. Sed commodo commodo magna, vitae ornare sem pulvinar in. Pellentesque gravida varius nulla quis accumsan.
+
+\section{Gels \& Accompanying Analysis}
+\label{sec:gelAnalysis}
+Continued on next page.
+
+\gel{1_1-tlw13.png}{1_2-tlw13.png}{Gel 1}{
+In this gel, Gel 1, from left to right, we have Primer mix, A1-H1 and a reference 1kb Ladder. As a reminder, samples A1-H1 were stored at room temperature in the dark for 13 days.\\
+
+In samples A1 and C1 there are indications that they contain DNA shorter than the primer mix. However, since the only DNA input into A1 and C1 is the same DNA in the primer mix, this leads us to the possible conclusion that the DNA partially degraded sometime before this gel. While it is possible that this happened whilst it was being handled, that would be inconsistent with our past results. Further, if this was the case, we would should see shortening of all the samples (which we do not). As such, it seems reasonable to conclude that the shortening of the DNA occurred during the 13 days of storage at room temperature.\\
+
+Further, in samples A1, B1, F1, and G1 we see extended DNA. This is strong evidence that the \tdt{} in these samples remained viable. (There is extending in samples C1 and D1 as well, but the \tdt{} in these samples was added after the 13 days.)\\
+
+Additionally, we saw much more DNA present in samples A1-C1 than samples D1-H1 (some of which (E1 and H1) are completely invisible) which is most likely due to human error. As such, most comparisons between A-C samples and D-H samples will most likely result in null conclusions at best, and will therefore be avoided.\\
+
+In conclusion, this gel supports the conclusion that the conditions present in samples A1-C1 may result in the degradation of DNA over relatively short periods of time (\~13 days) at room temperature. However, the conditions in samples A1-C1 still seem to be conducive to \tdt{} and it's continued activity after short periods of time at room temperature. Further, there seems to be evidence that, while the results from samples D1, F1 and G1 are vague, the conditions present in samples D1, F1 and G1 seem to be conducive to \tdt{} and it's continued activity after short periods of time at room temperature. Nothing can be said about samples E1 and H1 from this gel. 
+}%\end{comment} 
+
+\end{document}

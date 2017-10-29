@@ -1,0 +1,254 @@
+\documentclass[letterpaper]{article}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%                  HI!                    %%%%
+%%%%        THIS IS THE SSI-BIOLOGY			 %%%%
+%%%%      GENERIC PROCEDURE TEMPLATE :) 	 %%%%
+%%%%      IT MIGHT LOOK SCARY, BUT IT'S 	 %%%%
+%%%%           PRETTY EASY TO USE 			 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%      RIGHT NOW YOU'RE LOOKING AT BOILERPLATE     %%%%
+%%%%  THAT IS, THINGS YOU DON'T HAVE TO CHANGE (EVER) %%%%
+%%%%     SCROLL DOWN FOR THE THINGS YOU SHOULD PAY    %%%%
+%%%%    ATTENTION TO :)  (YOU'LL KNOW WHEN TO STOP)   %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size, footer, indent and margins
+\usepackage[a4paper,top=2.5cm,bottom=2cm,left=2.25cm,right=2.25cm,marginparwidth=2.25cm]{geometry}
+\setlength\parindent{0pt}
+\setlength{\footskip}{55pt}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{readarray}
+\usepackage{verbatimbox}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{colortbl}
+\usepackage{libertine} 
+\usepackage{siunitx}
+
+
+% Safety Environment 
+\definecolor{safetyFrame}{HTML}{FFFFFF}
+\newenvironment{safety}{%
+\begin{tcolorbox}[width=\textwidth, colframe=safetyFrame, arc=1.5mm]
+}%
+{\end{tcolorbox}}
+
+
+% Footer
+\lfoot{\includegraphics[height=1.5cm]{1000x350-Horiz-Logo-WhiteRed-BlackText.png}}
+
+% Substitution Commands
+\newcommand{\tdt}{Terminal Deoxynucleotidyl Transferase}
+\newcommand{\C}{\degree{}C}
+\newcommand{\uL}{\micro{}L}
+\newcommand{\BdATP}{3'-O-(2-nitrobenzyl)-2'-dATP}
+
+%Custom Commands
+\newcommand{\B}[1]{\textbf{#1}}
+
+% Safety Info
+\newcommand{\SYBRGold}{\item{\B{SYBR Gold} is a mutagen and can penetrate laboratory gloves in a relatively short period of time, please change your gloves in the event of contamination.
+}}
+\newcommand{\ETBR}{\item{\B{Ethidium Bromide} is a \B{serious mutagen} and is \B{significantly carcinogenic}. If working with considerable amounts, a \B{fume hood and respirator} are warranted. For more information see \url{https://www.sciencelab.com/msds.php?msdsId=9927667}
+}}
+
+
+% Shortcuts
+
+%Stop Point (Optional)
+\newcommand{\stopPoint}{\begin{center}
+\rule{0.5\textwidth}{.4pt}\\
+\vspace{1mm} 
+OPTIONAL STOP POINT\\
+\rule{0.5\textwidth}{.4pt}
+\end{center}}
+
+\newcommand{\RstopPoint}{\begin{center}
+\rule{0.5\textwidth}{.4pt}\\
+\vspace{1mm} 
+RECOMMENEDED STOP POINT\\
+\rule{0.5\textwidth}{.4pt}
+\end{center}}
+
+% Dilution Macro
+\newcommand{\Dilution}[4]{
+\subsection{#2}
+\begin{enumerate}
+\item{Vortex #2 stock}
+\item{Pipette #1\uL{} #2 into a PCR Tube}
+\item{Pipette #3\uL{} #4 into solution}
+\item{Vortex until mixed}
+%\item{Pipette $#2\mu L$ Water into solution}
+\end{enumerate}
+}
+
+% Gel Macro
+\newcommand{\gel}[4]{
+\begin{figure}[ht]
+\label{#3}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{#1}
+\includegraphics[width=0.45\textwidth]{#2}
+\caption{#3}
+\end{center}
+\subsection{#3 Analysis}
+#4
+\end{figure}
+}
+
+% Well plate Macro
+\newcommand{\wellplate}[2]{
+\getargsC{#1}
+\begin{tabular}{*{1}{>{\columncolor{blue!20}}l}|l|l|l|l|l|l|l|l|l|l|l|l|}
+\rowcolor{blue!20}%
+ & 1  & 2  & 3  & 4  & 5  & 6 & 7 & 8 & 9 & 10 & 11 & 12\\ \hline
+\ifdefined\argxii
+A & \argi & \argii & \argiii & \argiv & \argv & \argvi & \argvii & \argviii & \argix & \argx & \argxi & \argxii \\ \hline\fi
+\ifdefined\argxxiv
+B & \argxiii & \argxiv & \argxv & \argxvi & \argxvii & \argxviii & \argxix & \argxx & \argxxi & \argxxii & \argxxiii & \argxxiv \\ \hline\fi
+\ifdefined\argxxxvi
+C & \argxxv & \argxxvi & \argxxvii & \argxxviii & \argxxix & \argxxx & \argxxxi & \argxxxii & \argxxxiii & \argxxxiv & \argxxxv & \argxxxvi \\ \hline\fi
+\ifdefined\argxlviii
+D & \argxxxvii & \argxxxviii & \argxxxix & \argxl & \argxli & \argxlii & \argxliii & \argxliv & \argxlv & \argxlvi & \argxlvii & \argxlviii \\ \hline\fi
+\ifdefined\arglx
+E & \argxlix & \argl & \argli & \arglii & \argliii & \argliv & \arglv & \arglvi & \arglvii & \arglviii & \arglix & \arglx \\ \hline\fi
+\ifdefined\arglxxii
+F & \arglxi & \arglxii & \arglxiii & \arglxiv & \arglxv & \arglxvi & \arglxvii & \arglxviii & \arglxix & \arglxx & \arglxxi & \arglxxii \\ \hline\fi
+\ifdefined\arglxxxiv
+G & \arglxxiii & \arglxxiv & \arglxxv & \arglxxvi & \arglxxvii & \arglxxviii & \arglxxix & \arglxxx & \arglxxxi & \arglxxxii & \arglxxxiii & \arglxxxiv \\ \hline\fi
+\ifdefined\argxcvi
+H & \arglxxxv & \arglxxxvi & \arglxxxvii & \arglxxxviii & \arglxxxix & \argxc & \argxci & \argxcii & \argxciii & \argxciv & \argxcv & \argxcvi \\ \hline\fi
+\end{tabular}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% End of Boiler Plate %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%   AKA YOU WRITE AFTER THIS POINT    %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{Perfect PAGE III} % CHANGE THIS
+\author{Written by \textbf{Lillian Zhu and Alan Tomusiak}\\ % CHANGE THIS 
+		Checked by \textbf{?}\\ % CHANGE THIS
+        For the Stanford Student Space Initiative Biology Subteam}
+
+\begin{document}
+
+\maketitle
+
+\section{Procedure Purpose} % CHANGE THIS
+This experiment was run to determine whether DNA amount has an effect on the clarity of bands in a gel.
+
+\section{Overview} % CHANGE THIS
+We ran a single gel with serial dilutions of oligos and ladders, looking for clarity and single base-pair resolution.
+\\
+
+% Safety First! ALSO, % CHANGE THIS
+\section{Safety Information}
+\begin{safety}
+\begin{enumerate}
+\SYBRGold{} % For select reagents, I've created custom commands so we don't have to copy and paste every time :)
+\item{Working in a communal lab space is dangerous. Do not assume your fellow workers cleaned up sufficiently}
+\end{enumerate}
+\end{safety}
+
+
+\section{Materials}
+\begin{enumerate}
+\item{1 15\% PAGE Urea gel}
+\item{Loading Buffer (dye)}
+\item{TBE Buffer}
+\item{40 ng/uL 15 bp oligo}
+\item{40 ng/uL 16 bp oligo}
+\item{Custom ladder mix}
+\item{UltraPure water}
+\end{enumerate}
+
+%\section{Dilutions} % We have a dilution macro! (courtesy of me, aka if you have a suggestion tell me please)
+%\Dilution{2.5}{Primer 1}{22.5}{Water} % \Dilution{amount of liquid 1}{liquid1}{amount of liquid 2}{liquid2}
+
+% Now for the _good_ stuff  
+\section{Procedure}% CHANGE THIS
+\begin{enumerate} % THIS STARTS THE "STEP SECTION"
+\item{Rinse wells with 15 \uL{} TBE buffer. Pre-run for 20 minutes. Get the DNA samples out of the freezer.} % EACH STEP IS AN "ITEM" AND MUST BE IN A \item{}. aka, \item{do the thing}
+\subsection{Dilutions}
+\begin{enumerate}
+\item{15 and 16 bp}
+\begin{itemize}
+\item{For 1 in 5, add 10 \uL{} original sample to 40 \uL{} water.}
+\item{For 1 in 10, add 10 \uL{} original sample to 90 \uL{} water.}
+\item{For 1 in 100, add 10 \uL{} 10x dilution to 90 \uL{} water.}
+\end{itemize}
+\item{Ladder}
+\begin{itemize}
+\item{For 1 in 10, add 1 \uL{} original sample to 9 \uL{} water.}
+\item{For 1 in 100, add 1 \uL{} original sample to 99 \uL{} water.}
+\item{For 1 in 1000, add 1 \uL{} original sample to 999 \uL{} water.}
+\item{For 1 in 10000, add 1 \uL{} 10x dilution to 999 \uL{} water.}
+\end{itemize}
+\end{enumerate}
+\item{Obtain a sizable piece of parafilm. Pipette 5 \uL{} of Gel Loading Buffer in a row of 14 droplets.}
+\item{For the 10 bp ladder column, add 0.5 \uL{} ladder stock and 4.5 \uL{} TBE Buffer.}
+\item{For the remaining droplets, add 5 \uL{} of the appropriate sample.}
+\item{As you go, pipette up and down to mix thoroughly.}
+\item{Load the gels (with 10 \uL{} sample in each well) when they are finished pre-running. Ensure pipette tip is fully in the well, and depress slowly and carefully. Work quickly to minimize diffusion.}
+
+\begin{figure}[ht] %This is a figure, in this case, a well plate
+\begin{center} 
+\addvbuffer[{0mm} \baselineskip]{\begin{tabular}{|l|l|}
+\hline
+Well number    & Sample \\ \hline
+1                                  & 10 bp Ladder (control)   \\ \hline
+2								   & Undiluted 15 bp (200 ng) \\ \hline
+3                                  & 1:5 15 bp (40 ng)  \\ \hline
+4                                  & 1:10 15 bp (20 ng)  \\ \hline
+5                                  & 1:100 15 bp (2 ng)  \\ \hline
+6								   & Undiluted 16 bp (200 ng) \\ \hline
+7                                  & 1:5 16 bp (40 ng)  \\ \hline
+8                                  & 1:10 16 bp (20 ng)   \\ \hline
+9                                  & 1:100 16 bp (2 ng)  \\ \hline
+10                                  & 1:10 ladder mix \\ \hline
+11                                  & 1:100 ladder mix \\ \hline
+12                                 & 1:1000 ladder mix     \\ \hline
+13                                 & 1:10000 ladder mix      \\ \hline
+14                                 & Blank  \\ \hline
+
+\end{tabular}}
+\label{tab:Gel Layout} %Label your stuff, this is for referencing in the future
+\caption{Wells} %Caption!
+\end{center}
+\end{figure}
+
+\item{Run the gel at 150 V until dark blue dye is about 1 cm from the bottom. This should take about 1 hour.}
+\item{Meanwhile, prepare 50 mL 1x SYBR Gold solution in an appropriate container.}
+\item{After gel finishes, soak in SYBR for 30 minutes (try and be exact, but can probably vary within 5 min).}
+\item{Proceed to imaging. Carefully position the gel, ensuring correct orientation, and optimize for intense bands.}
+\item{Post resulting pictures and interpretations to Slack.}
+\end{enumerate}
+
+\end{document}
