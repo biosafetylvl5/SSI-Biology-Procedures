@@ -5,30 +5,20 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 
-%% Sets page size, footer, indent and margins
+%%% Useful packages
+\usepackage{fancyhdr}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{libertine} 
+\usepackage{wrapfig}
+\usepackage{todonotes}
+
+% Sets page size, footer, indent and margins
 \usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.25cm,right=2.25cm,marginparwidth=2.25cm]{geometry}
 \setlength\parindent{0pt}
 \setlength{\footskip}{55pt}
-
-%% Useful packages
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{fancyhdr}
 \pagestyle{fancy}
-\usepackage{textcomp}
-\usepackage{gensymb}
-\usepackage{hyperref}
-\usepackage{readarray}
-\usepackage{verbatimbox}
-\usepackage{framed}
-\usepackage[dvipsnames]{xcolor}
-\usepackage{tcolorbox}
-\usepackage{colortbl}
-\usepackage{libertine} 
-\usepackage{siunitx}
-\usepackage{wrapfig}
-\usepackage{enumitem}
-\usepackage{todonotes}
 
 % Safety Environment 
 \definecolor{safetyFrame}{HTML}{FFFFFF}
@@ -68,7 +58,7 @@ OPTIONAL STOP POINT\\
 \newcommand{\RstopPoint}{\begin{center}
 \rule{0.5\textwidth}{.4mm}\\
 \vspace{1mm} 
-RECOMMENEDED STOP POINT\\
+RECOMMENDED STOP POINT\\
 \rule{0.5\textwidth}{.4mm}
 \end{center}}
 
@@ -165,6 +155,7 @@ This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The 
 \item{Pipette 2\uL{} of dATP dilute into PCR Tube A}
 \item{Pipette 2\uL{} of \BdATP{} dilute into PCR Tube B}
 \item{Pipette 2\uL{} of ddATP \textbf{10mM stock} into PCR Tube D}
+\item{Gently pipette 1.5\uL{} \tdt (20U/\uL{}) into both PCR tubes.}
 \item{Incubate sample at 37\C{} for 30 minutes}\\
 \textbf{Note}: \textbf{Do NOT} deactivate \tdt{} 
 \stopPoint{} 
@@ -249,22 +240,29 @@ Well number    & Sample \\ \hline
 \end{enumerate}
 
 \section{Result Analysis}
+
+\subsection{Hypotheses}
+\begin{enumerate}
+\item{Lack of \tdt{} deblocking lead to extension of samples in the well.}
+\item{No/the wrong nucleotides were added to sample B before the first "Blocking extension"}
+\item{}
+\end{enumerate}
+
 \subsection{Summary}
-While our analytic techniques provided exemplary data, the data we did collect is in contradiction with our past results from the original \BdATP{} Incorporation Detection Experiment. Taken in isolation, this experiment suggests that the \BdATP{} \textit{does not} hinder extension (eg. does not block further extension or cannot be incorporated).
+While our analytic techniques provided exemplary data, the data we did collect is in contradiction with our past results from the original \BdATP{} Incorporation Detection Experiment. Taken in isolation, the current experiment suggests that the \BdATP{} \textit{does not} hinder extension (eg. does not block further extension or cannot be incorporated).
 \subsection{Gel Analysis}
 
 \begin{figure}[ht]
 \label{mainGel}
 \begin{center}
-\includegraphics[width=0.45\textwidth]{./resources/gels/touched-up-gel.png}
+%\includegraphics[width=0.45\textwidth]{./resources/gels/touched-up-gel.png}
 \caption{A digitally touched up 20\% SDS PAGE Gel}
 \end{center}
 \end{figure}
 
-
 \begin{wrapfigure}{R}{0.2\textwidth}
 \centering
-\includegraphics[width=0.18\textwidth]{./resources/endCondition.jpg}
+%\includegraphics[width=0.18\textwidth]{./resources/endCondition.jpg}
 \caption{Gel When Stopped}
 \label{endCondition}
 \end{wrapfigure}
@@ -274,28 +272,28 @@ In the gel shown in Figure \ref{mainGel}, we have a variety of samples: from lef
 
 \begin{wrapfigure}{r}{0.2\textwidth}
 \centering
-\includegraphics[width=0.18\textwidth]{./resources/midRun.jpg}
+%\includegraphics[width=0.18\textwidth]{./resources/midRun.jpg}
 \caption{Our SDS PAGE gel mid run. Notice the absence of "upside down smiling".}
 \label{noSmile}
 \end{wrapfigure}
 
 In direct contrast to our last two experiments \todo{Add reference here to our procedures}, the analysis PAGE gel of this experiment provided us with useful results with accurate single base pair resolution.
 This is made evident by the three samples of Custom Ladder that were added to wells 2, 13 and 14. Moreover, the 26mer and 25mer were separated in adjacent wells similarly to the way the 26mer and the 25mer were separated as part of the Custom Ladder in the same well. This is important because it allows us to (1) compare multiple bands \textit{inside the same well} and (2) compare multiple bands \textit{across multiple wells}.\\
-This is likely due to the lack of smiling and the long run time. See Figure \ref{noSmile} is a picture of our gel mid run (after about 40 minutes). Throughout it's run, the gel did not appear to have exceedingly different run rates for different gels.
+This is likely due to the lack of smiling and the long run time. See Figure \ref{noSmile} is a picture of our gel mid run (after about 40 minutes). Throughout its run, the gel did not appear to have exceedingly different run rates for different lanes.
 Moreover, the gel was run for a total of three hours and 10 minutes. It was stopped once the loading dye reached the bottom of the gel, see Figure \ref{endCondition} for future reference.\\
-However, while the analytical techniques were not the sour-note of this experiment, the results from this experiment provide a direct contradiction of our \BdATP{} Incorporation Detection experiment performed on September 28, 2017 (a month before this experiment was performed). Moreover, every control sample (with the exception of D+X) exhibited either (1) the same behavior as in the original \BdATP{} Incorporation Detection experiment or (2) alternate behavior that we predicted would result from switching from agarose to polyacrylamide for our gel electrophoresis medium. The discrepancy in question is the extension of Sample B. In the original \BdATP{} Incorporation Detection experiment, we \textit{did not} see extension of Sample B (see Figure \ref{oldGel}). In this experiment we \textit{did} see extension of Sample B. Moreover, there is little indication that the extension of Sample B by \tdt{} was in any way hampered by the presence of the \BdATP{} or the original \BdATP{} extension step.\\
+However, while the analytical techniques were not the sour note of this experiment, the results from this experiment provide a direct contradiction of our \BdATP{} Incorporation Detection experiment performed on September 28, 2017 (a month before this experiment was performed). Moreover, every control sample (with the exception of D+X) exhibited either (1) the same behavior as in the original \BdATP{} Incorporation Detection experiment or (2) alternate behavior that we predicted would result from switching from agarose to polyacrylamide for our gel electrophoresis medium. The discrepancy in question is the extension of Sample B. In the original \BdATP{} Incorporation Detection experiment, we \textit{did not} see extension of Sample B (see Figure \ref{oldGel}). In this experiment we \textit{did} see extension of Sample B. Moreover, there is little indication that the extension of Sample B by \tdt{} was in any way hampered by the presence of the \BdATP{} or the original \BdATP{} extension step.\\
 
 The most likely explanation of this discrepancy is that either (1) we made an error while performing the experiment and/or that (2) this is some other discrepancy between this procedure and the original procedure that produced this anomaly. \todo{Discuss this anomaly and pour over the two procedures to identify discrepancies at the biology-terminator meeting}\\
 
-Since we have conflicting results, this or, more likely, a modified version of this procedure will need to be run.
+Since we have conflicting results, this or, more likely, a modified version of this procedure will need to be rerun.
 
 
 \begin{figure}
 \begin{center}
 
-\includegraphics[width=0.3\textwidth]{./resources/gels/image1.png}
-\includegraphics[width=0.3\textwidth]{./resources/gels/image2.png}
-\includegraphics[width=0.3\textwidth]{./resources/gels/image3.png}
+%\includegraphics[width=0.3\textwidth]{./resources/gels/image1.png}
+%\includegraphics[width=0.3\textwidth]{./resources/gels/image2.png}
+%\includegraphics[width=0.3\textwidth]{./resources/gels/image3.png}
 
 \label{gels3}
 \caption{Unedited Gel Images}
