@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.26)  31 OCT 2017 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.26)  31 OCT 2017 15:21
 entering extended mode
 **./main.tex
 (main.tex
@@ -848,35 +848,10 @@ LaTeX Info: Redefining \nameref on input line 109.
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
- ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros [1
 
-LaTeX Warning: Citation `ThermoScientific2016' on page 1 undefined on input lin
-e 122.
-
-
-LaTeX Warning: Citation `Invitrogen2002' on page 1 undefined on input line 136.
-
-
-
-LaTeX Warning: Citation `ThermoScientific2016' on page 1 undefined on input lin
-e 140.
-
-
-LaTeX Warning: Citation `ThermoScientific2016' on page 1 undefined on input lin
-e 140.
-
-
-LaTeX Warning: Citation `Invitrogen2002' on page 1 undefined on input line 140.
-
-
-
-LaTeX Warning: Citation `Wostemeyer2014' on page 1 undefined on input line 140.
-
-
-[1
-
-{C:/Users/alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (main.bbl) <
-1000x350-Horiz-Logo-WhiteRed-BlackText.png, id=40, 1003.75pt x 351.3125pt>
+{C:/Users/alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (main.bbl)
+<1000x350-Horiz-Logo-WhiteRed-BlackText.png, id=47, 1003.75pt x 351.3125pt>
 File: 1000x350-Horiz-Logo-WhiteRed-BlackText.png Graphic file (type png)
 
 <use 1000x350-Horiz-Logo-WhiteRed-BlackText.png>
@@ -891,35 +866,27 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1234F1D39A3CA2C7975CF259F5D432EB;41.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 144.
  ) 
 Here is how much of TeX's memory you used:
- 17657 strings out of 493323
- 319648 string characters out of 3139068
- 416220 words of memory out of 3000000
- 20842 multiletter control sequences out of 15000+200000
- 14964 words of font info for 41 fonts, out of 3000000 for 9000
+ 17655 strings out of 493323
+ 319626 string characters out of 3139068
+ 416334 words of memory out of 3000000
+ 20841 multiletter control sequences out of 15000+200000
+ 14188 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,14n,73p,1016b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\alex\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
 csl1000.pk> <C:\Users\alex\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
 \dpi600\tcrm1000.pk> <C:\Users\alex\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
-nappen\ec\dpi600\ecbx1000.pk> <C:\Users\alex\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\alex\AppData\Local\MiKTeX\2.9\
-fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\alex\AppData\Local\Mi
-KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\alex\AppData
-\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-Output written on main.pdf (2 pages, 124796 bytes).
+nappen\ec\dpi600\ecrm1000.pk> <C:\Users\alex\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\alex\AppData\Local\MiKTeX\2.9\
+fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\alex\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+Output written on main.pdf (2 pages, 125091 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
+ 248 PDF objects out of 1000 (max. 8388607)
  26 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
