@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.26)  29 OCT 2017 20:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.26)  31 OCT 2017 15:19
 entering extended mode
 **./main.tex
 (main.tex
@@ -729,8 +729,7 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 )
 \everycr=\toks41
 \minrowclearance=\skip59
-)
-No file main.aux.
+) (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
@@ -747,6 +746,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
 LaTeX Font Info:    ... okay on input line 109.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 109.
+
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -843,11 +843,12 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 109.
 LaTeX Info: Redefining \pageref on input line 109.
 LaTeX Info: Redefining \nameref on input line 109.
+
+(main.out) (main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 
 LaTeX Warning: Citation `ThermoScientific2016' on page 1 undefined on input lin
 e 122.
@@ -874,9 +875,8 @@ LaTeX Warning: Citation `Wostemeyer2014' on page 1 undefined on input line 140.
 
 [1
 
-{C:/Users/alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-No file main.bbl.
-<1000x350-Horiz-Logo-WhiteRed-BlackText.png, id=36, 1003.75pt x 351.3125pt>
+{C:/Users/alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (main.bbl) <
+1000x350-Horiz-Logo-WhiteRed-BlackText.png, id=40, 1003.75pt x 351.3125pt>
 File: 1000x350-Horiz-Logo-WhiteRed-BlackText.png Graphic file (type png)
 
 <use 1000x350-Horiz-Logo-WhiteRed-BlackText.png>
@@ -889,25 +889,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 1234F1D39A3CA2C7975CF259F5D432EB;41.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  1234F1D39A3CA2C7975CF259F5D432EB;41.
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 144.
  ) 
 Here is how much of TeX's memory you used:
- 17639 strings out of 493323
- 319452 string characters out of 3139068
- 416116 words of memory out of 3000000
- 20836 multiletter control sequences out of 15000+200000
+ 17657 strings out of 493323
+ 319648 string characters out of 3139068
+ 416220 words of memory out of 3000000
+ 20842 multiletter control sequences out of 15000+200000
  14964 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,14n,73p,1016b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -920,9 +917,9 @@ fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\alex\AppData\Local\Mi
 KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\alex\AppData
 \Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-Output written on main.pdf (2 pages, 121954 bytes).
+Output written on main.pdf (2 pages, 124796 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 247 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
