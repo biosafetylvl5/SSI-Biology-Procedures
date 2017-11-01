@@ -13,6 +13,7 @@
 \usepackage{libertine} 
 \usepackage{wrapfig}
 \usepackage{todonotes}
+\usepackage{mdframed}
 
 % Sets page size, footer, indent and margins
 \usepackage[a4paper,top=2.5cm,bottom=3.5cm,left=2.25cm,right=2.25cm,marginparwidth=2.25cm]{geometry}
@@ -140,6 +141,7 @@ This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The 
 	A & The primer incubated with \textbf{dATP} and then commercial \textbf{dNTPs} \\
 	B1 & The primer incubated with \textit{just} \textbf{NBdATP} \\
 	B2 & The primer incubated with \textbf{NBdATP} and then \textbf{dNTPs}\\
+	B1*, B2* & A repeat of B1 and B2 prepared separetely from B1 and B2\\
 	C & The primer incubated with just \textbf{dNTPs} in the second incubation \\
 	D & The primer incubated with \textbf{ddATP} nucleotides and then \textbf{dNTPs} \\
 	X & The primer incubated with \textbf{dNTPs} but \textbf{no \tdt{}} in the second incubation \\
@@ -154,11 +156,13 @@ This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The 
 \item{Let \BdATP{} thaw on ice in dark}
 \item{Other reagents can thaw on ice in the light}
 \subsection{Attempted blocking}
-\item{Label three PCR Tubes A, B and D, respectively}
+\item{Label four PCR Tubes A, B, B* and D, respectively}
 \item{Pipette 11\uL{} of nuclease free water into tube A}
 \item{Pipette 13.7\uL{} of nuclease free water into tube B}
-\item{Pipette 11\uL{} of nuclease free water into tube D}
-\item{Pipette 4.0\uL{} 5X \tdt{} reaction buffer into all three PCR Tubes}
+\item{Pipette 11\uL{} of nuclease free water into tube D}\\
+	\textbf{Note}: Now would be a good time to do step \ref{B1}.
+\item{Pipette 4.0\uL{} 5X \tdt{} reaction buffer into all three PCR Tubes}\\
+	\textbf{Note}: Now would be a good time to do step \ref{B2}.
 \item{Dilute Nucleotides:
 \begin{enumerate}
 \item{Label a PCR Tube "dATP Dilute"}
@@ -167,13 +171,23 @@ This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The 
 \item{Vortex directly before use}
 \end{enumerate}
 }
-\item{Pipette 0.5\uL{} of primer into all three PCR Tubes}
+\item{Pipette 0.5\uL{} of primer into all three PCR Tubes}\\
+	\textbf{Note}: Now would be a good time to do step \ref{B3}.
 \item{Pipette 3\uL{} of dATP dilute into PCR Tube A}
-\item{Pipette .3\uL{} of \BdATP{} stock into PCR Tube B}
+\item{Pipette .3\uL{} of \BdATP{} stock into PCR Tube B}\\
+	\textbf{Note}: Now would be a good time to do step \ref{B4}.
 \item{Pipette 3\uL{} of ddATP \textbf{10mM stock} into PCR Tube D}
-\item{Gently pipette 1.5\uL{} \tdt (20U/\uL{}) into both PCR tubes.}
-\item{Incubate sample at 37\C{} for 30 minutes}\\
-\textbf{Note}: \textbf{Do NOT} deactivate \tdt{} 
+\item{Gently pipette 1.5\uL{} \tdt (20U/\uL{}) into all three PCR tubes.}\\
+	\textbf{Note}: Now you should do step \ref{B5}.
+
+\subsubsection{Replicate of B: B*}
+\item{Pipette 13.7\uL{} of nuclease free water into tube B*\label{B1}}
+\item{Pipette 4.0\uL{} 5X \tdt{} reaction buffer into B*\label{B2}}
+\item{Pipette 0.5\uL{} of primer into all three PCR Tubes\label{B3}}
+\item{Pipette .3\uL{} of \BdATP{} stock into PCR Tube B*\label{B4}}
+\item{Gently pipette 1.5\uL{} \tdt (20U/\uL{}) into B*.\label{B5}}
+\vspace{3mm}
+\item{Incubate samples at 37\C{} for 30 minutes}\\
 \stopPoint{} 
 \subsection{Extending}
 Based off of our standard \tdt{} extending procedure \cite{genTdT}.
@@ -186,21 +200,34 @@ Based off of our standard \tdt{} extending procedure \cite{genTdT}.
 \item{Pipette 3\uL{} of dNTP stock into PCR Tubes C and X}
 \item{Pipette .4\uL{} of dNTP stock into PCR Tubes \textbf{A, B}}
 \item{Wait until the previous samples have finished incubating}
-\item{Label a PCR Tube "B1"}
+\item{Label two PCR Tubes "B1" and "B1*}
 \item{Pipette 10\uL{} from B into B1}
-\item{Pipette 1.5\uL{} EDTA into \textbf{B1} to stop the reaction \cite{Invitrogen2002}}
+\item{Pipette 1.5\uL{} EDTA into \textbf{B1} to stop the reaction \cite{Invitrogen2002}}\\
+	\textbf{Note}: Now would be a good time to do steps \ref{2B1} and \ref{2B2}.
 \item{Gently pipette 1.5\uL{} \tdt{} (15 U/\uL{}) into \textbf{PCR Tube C}}
-\item{Incubate \textbf{all} samples \textbf{except B1} at 37\C{} for 30 minutes}
+\item{Incubate \textbf{all} samples \textbf{except B1 and B1*} at 37\C{} for 30 minutes}
 \item{Pipette 1.5\uL{} nuclease free water into B1}
-\item{Place B1 into -20\C{} freezer for later use}
-\item{Stop any \tdt action by adding 2\uL{} 0.5M EDTA to the all PCR tubes \textbf{except B2} after incubation.\cite{Invitrogen2002}}
-\item{Pipette 1\uL{} 0.5M EDTA into B2}
+\item{Place B1 into -20\C{} freezer for later use}\\
+	\textbf{Note}: Now would be a good time to do steps \ref{2B3} and \ref{2B4}.
+\item{Stop any \tdt action by adding 2\uL{} 0.5M EDTA to the all PCR tubes \textbf{except B and B*} after incubation.\cite{Invitrogen2002}}
+\item{Pipette 1\uL{} 0.5M EDTA into B}\\
+\textbf{Note}: Now would be a good time to do steps \ref{2B5} and \ref{2B6}.
+\item{Pipette .4\uL{} of dNTP stock into PCR Tubes \textbf{A, B}}
+
+\subsubsection{\textbf{*} Replicates: B1* and B*}
+\item{Pipette 10\uL{} from B* into B1*\label{2B1}}
+\item{Pipette 1.5\uL{} EDTA into \textbf{B1*} to stop the reaction \cite{Invitrogen2002}\label{2B2}}
+\item{Pipette 1.5\uL{} nuclease free water into B1*\label{2B3}}
+\item{Place B1* into -20\C{} freezer for later use\label{2B4}}
+\item{Pipette 1\uL{} 0.5M EDTA into B*\label{2B5}}
+\item{Pipette .4\uL{} of dNTP stock into PCR Tube B*\label{2B6}}
+
 \RstopPoint{} 
 \subsection{Analysis}
 \subsection{XCell Surelock Setup and Pre-Run}
 \item{Remove 20\% polyacrylamide gel from pouch and rinse with deionized water.}
 \item{Peel off tape on bottom of 20\% polyacrylamide gel and remove the comb.}
-\item{Gently wash every cassette well with 1X TBE buffer. Invert to remove buffer and shake. Repeat twice.}
+%\item{Gently wash every cassette well with 1X TBE buffer. Invert to remove buffer and shake. Repeat twice.} % Removed because this step _was not performed_ in the previous procedures and our gels were more than satisfactory
 \item{Lower the Buffer Core (the piece that holds the gels) into the Lower Buffer Chamber so that the negative electrode fits into the opening in the gold plate.}
 \item{Insert the Gel Tension Wedge into the XCell Surelock behind the buffer core. Make sure it is in its 'unlocked' position, which allows the wedge to slip into the unit.}
 \item{Insert gel cassettes into the lower buffer chamber. The shorter "well" side of the cassette faces into the buffer core. The slot on the back must face outward. If only one gel is being run, insert a buffer dam in the place of a gel cassette.}
@@ -209,7 +236,7 @@ Based off of our standard \tdt{} extending procedure \cite{genTdT}.
 \item{Fill the Lower Buffer Chamber completely with running buffer by pouring TBE next to the Gel Tension Wedge.}
 \item{Pipette 12\uL{} of running buffer into each gel well.}
 \item{Place the gel cover on the apparatus in the correct orientation. Connect the electrodes to the power source, and pre-run the gel for 30 minutes at 150V.}
-\item{When there is only 5 minutes left on the incubation, retreive sample B1 from the freezer and let thaw on ice}
+\item{When there is only 5 minutes left on the incubation, retrieve sample B1 from the freezer and let thaw on ice}
 \subsubsection{Run Gel}
 \begin{figure}[ht] %This is a figure, in this case, a well plate
 \begin{center} 
@@ -220,6 +247,8 @@ Well number				& Sample \\ \hline
 \rownumber				   & Custom Ladder (40ng) \\ \hline
 \rownumber                                 & B1 (40ng)\\ \hline
 \rownumber                                 & B2 (40ng)\\ \hline
+\rownumber                                 & B1* (40ng)\\ \hline
+\rownumber                                 & B2* (40ng)\\ \hline
 \rownumber                                 & X (40ng) \\ \hline
 \rownumber                                 & X + B1  (40ng each)\\ \hline
 \rownumber                                 & X + B2  (40ng each)\\ \hline
@@ -227,14 +256,12 @@ Well number				& Sample \\ \hline
 \rownumber                                 & X + D (40ng each)	\\ \hline
 \rownumber                                 & A (40ng)	\\ \hline
 \rownumber                                 & C (40ng)  \\ \hline
-\rownumber                                 & 26-Mer (40ng) \\ \hline
-\rownumber                                 & 25-Mer (40ng) \\ \hline % to see if we have bad separation between lanes like the last procedure
 \rownumber                                 & Custom Ladder (40ng)     \\ \hline
 \rownumber                                 & 10/60 DNA Ladder  \\ \hline
 
 \end{tabular}
 \label{tab:Gel Layout} %Label your stuff, this is for referencing in the future
-\caption{Wells} %Caption!
+\caption{Wells and their assorted reagents} %Caption!
 \end{center}
 \end{figure}
 \textbf{Note}: Be relatively swift about mixing and loading, as the samples will gradually begin to evaporate if left on the parafilm for too long.
