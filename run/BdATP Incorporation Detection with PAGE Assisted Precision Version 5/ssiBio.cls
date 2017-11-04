@@ -64,5 +64,5 @@ RECOMMENDED STOP POINT\\
     citecolor={ssiRedDark},
     urlcolor={ssiRedDark}
 }
-\input{safetyInfo.tex}
+\input{./resources/safetyInfo.tex}
 % vi:syntax=context
