@@ -1,7 +1,7 @@
 \documentclass{ssiBio}
-\title{\BdATP{} Incorporation Detection with PAGE Assisted Precision Version 5} % CHANGE THIS
+\title{\BdATP{} Incorporation Detection with PAGE Assisted Precision Version 5: Analysis} % CHANGE THIS
 \author{Written by \textbf{Michael Uttmark}\\ % CHANGE THIS 
-		Checked by \textbf{Cynthia Hao, Anna Ekholm, Nomi Ringach, Lillian Zhu and Alan Tomusiak}\\ % CHANGE THIS
+%		Checked by \textbf{Cynthia Hao, Anna Ekholm, Nomi Ringach, Lillian Zhu and Alan Tomusiak}\\ % CHANGE THIS
         For the Stanford Student Space Initiative Biology Subteam}
 \date{\textbf{Written:} October 29, 2017 \,\textbf{Performed:} November 1, 2017 \,\textbf{Printed:} \currenttime{}, \today{}}
 
@@ -38,7 +38,7 @@ This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The 
 \item{100mM dATP Stock}
 \item{10mM ddATP Stock}
 \item{5X \tdt{} Buffer}
-\item{\tdt{} Stock (20U/\uL{})}
+\item{\tdt{} Stock (20U/\uL{})} % Should REMEMBER TO CHANGE THIS to 15U/uL - we have much more of this available 
 \item{Nuclease Free Water}
 \item{TBE Buffer}
 \item{20\% Urea Denaturing Gels}
@@ -88,7 +88,7 @@ This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The 
 \item{Pipette 0.5\uL{} of primer into all three PCR Tubes}\\
 	\textbf{Note}: Now would be a good time to do step \ref{B3}.
 \item{Pipette 3\uL{} of dATP dilute into PCR Tube A}
-\item{Pipette .3\uL{} of \BdATP{} stock into PCR Tube B}\\
+\item{Pipette .3\uL{} of \BdATP{} stock into PCR Tube B}\\ % Should place this _after_ the ddATP step - we want the BdATP to be out for as short as possible
 	\textbf{Note}: Now would be a good time to do step \ref{B4}.
 \item{Pipette 3\uL{} of ddATP \textbf{10mM stock} into PCR Tube D}
 \item{Gently pipette 1.5\uL{} \tdt (20U/\uL{}) into all three PCR tubes.}\\
@@ -102,6 +102,7 @@ This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The 
 \item{Gently pipette 1.5\uL{} \tdt (20U/\uL{}) into B*.\label{B5}}
 \vspace{3mm}
 \item{Incubate samples at 37\C{} for 30 minutes}\\
+\item{Return dATP and ddATP to -20\C{} freezer.}
 \stopPoint{} 
 \subsection{Extending}
 Based off of our standard \tdt{} extending procedure \cite{genTdT}.
@@ -112,23 +113,25 @@ Based off of our standard \tdt{} extending procedure \cite{genTdT}.
 \item{Set PCR Tube X aside.}
 \item{Pipette 4.0\uL{} 5X \tdt{} reaction buffer into PCR Tube C}
 \item{Pipette 3\uL{} of dNTP stock into PCR Tubes C and X}
-\item{Pipette .4\uL{} of dNTP stock into PCR Tubes \textbf{A, B}}
 \item{Wait until the previous samples have finished incubating}
 \item{Label two PCR Tubes "B1" and "B1*}
 \item{Pipette 10\uL{} from B into B1}
 \item{Pipette 1.5\uL{} EDTA into \textbf{B1} to stop the reaction \cite{Invitrogen2002}}\\
 	\textbf{Note}: Now would be a good time to do steps \ref{2B1} and \ref{2B2}.
+\item{Pipette .4\uL{} of dNTP stock into PCR Tubes \textbf{A, B}}
 \item{Gently pipette 1.5\uL{} \tdt{} (15 U/\uL{}) into \textbf{PCR Tube C}}
 \item{Incubate \textbf{all} samples \textbf{except B1 and B1*} at 37\C{} for 30 minutes}
 \item{Pipette 1.5\uL{} nuclease free water into B1}
 \item{Place B1 into -20\C{} freezer for later use}\\
 	\textbf{Note}: Now would be a good time to do steps \ref{2B3} and \ref{2B4}.
+\item{Wait until the samples have finished incubating.}
 \item{Stop any \tdt action by adding 2\uL{} 0.5M EDTA to the all PCR tubes \textbf{except B and B*} after incubation.\cite{Invitrogen2002}}
 \item{Pipette 1\uL{} 0.5M EDTA into B}\\
 \textbf{Note}: Now would be a good time to do steps \ref{2B5} and \ref{2B6}.
-\item{Pipette .4\uL{} of dNTP stock into PCR Tubes \textbf{A, B}}
+%\item{Pipette .4\uL{} of dNTP stock into PCR Tubes \textbf{A, B}}
+%Questionable if this step was done - notes aren't very clear.
 
-\subsubsection{\textbf{*} Replicates: B1* and B*}
+\subsubsection{Replicates: B1* and B*}
 \item{Pipette 10\uL{} from B* into B1*\label{2B1}}
 \item{Pipette 1.5\uL{} EDTA into \textbf{B1*} to stop the reaction \cite{Invitrogen2002}\label{2B2}}
 \item{Pipette 1.5\uL{} nuclease free water into B1*\label{2B3}}
@@ -178,7 +181,7 @@ Well number				& Sample \\ \hline
 \end{center}
 \end{figure}
 \textbf{Note}: Be relatively swift about mixing and loading, as the samples will gradually begin to evaporate if left on the parafilm for too long.
-\item{Obtain a sizable piece of parafilm. Pipette 3 \uL{} of Gel Loading Buffer in a row of 15 droplets.}
+\item{Obtain a sizable piece of parafilm. Pipette 3 \uL{} of 2X Gel Loading Dye in a row of 15 droplets.}
 \item{For the 10/60 Ladder samples, pipette 1uL of 10/60 Ladder and 4 uL of running buffer and mix.}
 \item{For the remaining droplets, add 3 \uL{} of the appropriate sample. See the corresponding table (Figure \ref{tab:Gel Layout}) above for sample location and order.}
 \item{As you go, pipette up and down to mix thoroughly.}
