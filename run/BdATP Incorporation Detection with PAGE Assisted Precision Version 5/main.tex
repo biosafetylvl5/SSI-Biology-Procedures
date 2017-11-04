@@ -1,91 +1,4 @@
-\documentclass[letterpaper]{article}
-
-%% Language and font encodings
-\usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
-
-%%% Useful packages
-\usepackage{fancyhdr}
-\usepackage{gensymb}
-\usepackage{hyperref}
-\usepackage{tcolorbox}
-\usepackage{libertine} 
-\usepackage{wrapfig}
-\usepackage{todonotes}
-\usepackage[nodayofweek]{datetime}
-
-% Sets page size, footer, indent and margins
-\usepackage[a4paper,top=2.5cm,bottom=3.5cm,left=2.25cm,right=2.25cm,marginparwidth=2.25cm]{geometry}
-\setlength\parindent{0pt}
-\setlength{\footskip}{66pt}
-\pagestyle{fancy}
-
-% Safety Environment 
-\definecolor{safetyFrame}{HTML}{FFFFFF}
-\newenvironment{safety}{%
-\begin{tcolorbox}[width=\textwidth, colframe=safetyFrame, arc=1.5mm]
-}%
-{\end{tcolorbox}}
-
-% Footer
-\lfoot{\includegraphics[height=1.5cm]{./resources/1000x350-Horiz-Logo-WhiteRed-BlackText.png}}
-\rfoot{\includegraphics[height=1.25cm]{./resources/ssiBiologyLogo.png}}
-
-% Substitution Commands
-\newcommand{\tdt}{Terminal Deoxynucleotidyl Transferase}
-\newcommand{\C}{\degree{}C}
-\newcommand{\uL}{\micro{}L}
-\newcommand{\BdATP}{3'-O-(2-nitrobenzyl)-2'-dATP}
-
-% Safety Info
-\newcommand{\SYBRGOLD}{\item{\textbf{SYBR Gold} has no data available addressing the mutagenicity or toxicity of SYBR® Gold nucleic acid gel stain. Because this reagent binds to nucleic acids, it should be treated as a potential mutagen and handled with appropriate care. The DMSO stock solution should be handled with particular caution as DMSO is known to facilitate the entry of organic molecules into tissues.\cite{sybrGold}}}
-\newcommand{\SYBRI}{\item{\textbf{SYBR Green I} is a mutagen and can penetrate laboratory gloves in a relatively short period of time, please change your gloves in the event of contamination. See \url{http://www.sigmaaldrich.com/MSDS/MSDS/DisplayMSDSPage.do?country=US&language=en&productNumber=S9430&brand=SIAL} for more information on the specifics of SYBR Green I. 
-}}
-\newcommand{\ETBR}{\item{\textbf{Ethidium Bromide} is a \textbf{serious mutagen} and is \textbf{significantly carcinogenic}. If working with considerable amounts, a \textbf{fume hood and respirator} are warranted. For more information see \url{https://www.sciencelab.com/msds.php?msdsId=9927667}
-}}
-
-\newcommand{\tdtSafety}{\item{\textbf{\tdt{}} is toxic if inhaled. May cause cancer. Toxic to aquatic life with long lasting effects. Avoid breathing dust/fume/gas/mist/vapours/spray. Use personal protective equipment as required. If Inhaled: Remove victim to fresh air and keep at rest in a position comfortable for breathing. Dispose of contents/container in accordance with local/regional/national/international regulations.\cite{Invitrogen2002}}}
-
-%Stop Point (Optional)
-\newcommand{\stopPoint}{\begin{center}
-\rule{0.5\textwidth}{.4pt}\\
-\vspace{1mm} 
-OPTIONAL STOP POINT\\
-\rule{0.5\textwidth}{.4pt}
-\end{center}}
-
-%Recommended Stop Point
-\newcommand{\RstopPoint}{\begin{center}
-\rule{0.5\textwidth}{.4mm}\\
-\vspace{1mm} 
-RECOMMENDED STOP POINT\\
-\rule{0.5\textwidth}{.4mm}
-\end{center}}
-
-% Magic row numbers for table below
-\newcounter{magicrownumbers}
-\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
-
-%Remove boxes around links and set them to SSIRed - dark
-\definecolor{ssiRedDark}{HTML}{680811}
-\hypersetup{
-    colorlinks,
-    linkcolor={ssiRedDark},
-    citecolor={ssiRedDark},
-    urlcolor={ssiRedDark}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%% End of Boiler Plate %%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%   AKA YOU WRITE AFTER THIS POINT    %%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+\documentclass{ssiBio}
 \title{\BdATP{} Incorporation Detection with PAGE Assisted Precision Version 5} % CHANGE THIS
 \author{Written by \textbf{Michael Uttmark}\\ % CHANGE THIS 
 		Checked by \textbf{Cynthia Hao, Anna Ekholm, Nomi Ringach, Lillian Zhu and Alan Tomusiak}\\ % CHANGE THIS
@@ -227,7 +140,6 @@ Based off of our standard \tdt{} extending procedure \cite{genTdT}.
 \subsubsection{XCell Surelock Setup and Pre-Run}
 \item{Remove 20\% polyacrylamide gel from pouch and rinse with deionized water.}
 \item{Peel off tape on bottom of 20\% polyacrylamide gel and remove the comb.}
-%\item{Gently wash every cassette well with 1X TBE buffer. Invert to remove buffer and shake. Repeat twice.} % Removed because this step _was not performed_ in the previous procedures and our gels were more than satisfactory
 \item{Lower the Buffer Core (the piece that holds the gels) into the Lower Buffer Chamber so that the negative electrode fits into the opening in the gold plate.}
 \item{Insert the Gel Tension Wedge into the XCell Surelock behind the buffer core. Make sure it is in its 'unlocked' position, which allows the wedge to slip into the unit.}
 \item{Insert gel cassettes into the lower buffer chamber. The shorter "well" side of the cassette faces into the buffer core. The slot on the back must face outward. If only one gel is being run, insert a buffer dam in the place of a gel cassette.}
