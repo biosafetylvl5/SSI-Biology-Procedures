@@ -2,14 +2,14 @@
 \title{\BdATP{} Incorporation Detection with PAGE Assisted Precision Version 5: Analysis} % CHANGE THIS
 \author{Written by \textbf{Michael Uttmark}\\ % CHANGE THIS 
 %		Checked by \textbf{Cynthia Hao, Anna Ekholm, Nomi Ringach, Lillian Zhu and Alan Tomusiak}\\ % CHANGE THIS
-        For the Stanford Student Space Initiative Biology Subteam}
+        For the Stanford Student Space Initiative Biology Sub team}
 \date{\textbf{Written:} October 29, 2017 \,\textbf{Performed:} November 1, 2017 \,\textbf{Printed:} \currenttime{}, \today{}}
 
 \begin{document}
 
 \maketitle
 \section{Procedure Purpose} % CHANGE THIS
-Determine if the the modified nucleotide, \BdATP{}, can be noticeably incorporated by \tdt{} in "standard conditions" while determining the blocking efficacy \& purity of our \BdATP{} stock.
+Determine if the modified nucleotide, \BdATP{}, can be noticeably incorporated by \tdt{} in "standard conditions" while determining the blocking efficacy \& purity of our \BdATP{} stock.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=2in]{./resources/BdATP-Structure.png}
@@ -17,13 +17,13 @@ Determine if the the modified nucleotide, \BdATP{}, can be noticeably incorporat
 \label{bdatp}
 \end{figure}
 \section{Overview} % CHANGE THIS 
-This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The effectiveness of this attempt will be determined by attempting to form a homopolymer on the modified primer. If a homopolymer is formed, the blocking groups did not effectively prevent their formation. This could be due to many reasons (the most likely of which being that the blocking groups either (1) were appended without the 2' nitrobenzyl due to sample degradation or (2) were not appended). If the homopolymer was not formed (but a homopolymer was formed on the controls) it follows that the blocking groups prevented the formation of the homopolymer, likely due to them preforming their intended function. Moreover, all samples will be run on a PAGE gel in order to achieve single nucleotide resolution. This will allow us to confirm that the \BdATP{} is the only base appended to the "blocked" sample. A ddATP control will help as well.
+This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The effectiveness of this attempt will be determined by attempting to form a homopolymer on the modified primer. If a homopolymer is formed, the blocking groups did not effectively prevent their formation. This could be due to many reasons (the most likely of which being that the blocking groups either (1) were appended without the 2' nitrobenzyl due to sample degradation or (2) were not appended). If the homopolymer was not formed (but a homopolymer was formed on the controls) it follows that the blocking groups prevented the formation of the homopolymer, likely due to them preforming their intended function. Moreover, all samples will be run on a PAGE gel to achieve single nucleotide resolution. This will allow us to confirm that the \BdATP{} is the only base appended to the "blocked" sample. A ddATP control will help as well.
 
 % Safety First! ALSO, % CHANGE THIS
 \section{Safety Information}
 \begin{safety}
 \begin{enumerate}
-\SYBRGOLD{} % For select reagents, I've created custom commands so we don't have to copy and paste every time :)
+\SYBRGOLD{} % For select reagents, I've created custom commands, so we don't have to copy and paste every time :)
 \tdtSafety{} 
 \tdtBufferSafety{}
 \item{Working in a communal lab space is dangerous. Do not assume your fellow workers cleaned up sufficiently}
@@ -55,7 +55,7 @@ This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The 
 	A & The primer incubated with \textbf{dATP} and then commercial \textbf{dNTPs} \\
 	B1 & The primer incubated with \textit{just} \textbf{NBdATP} \\
 	B2 & The primer incubated with \textbf{NBdATP} and then \textbf{dNTPs}\\
-	B1*, B2* & A repeat of B1 and B2 prepared separetely from B1 and B2\\
+	B1*, B2* & A repeat of B1 and B2 prepared separately from B1 and B2\\
 	C & The primer incubated with just \textbf{dNTPs} in the second incubation \\
 	D & The primer incubated with \textbf{ddATP} nucleotides and then \textbf{dNTPs} \\
 	X & The primer incubated with \textbf{dNTPs} but \textbf{no \tdt{}} in the second incubation \\
@@ -105,7 +105,7 @@ This lab will attempt to append \BdATP{} to a \textbf{short (25bp) primer}. The 
 \item{Return dATP and ddATP to -20\C{} freezer.}
 \stopPoint{} 
 \subsection{Extending}
-Based off of our standard \tdt{} extending procedure \cite{genTdT}.
+Based off our standard \tdt{} extending procedure \cite{genTdT}.
 \item{Label two PCR Tubes C and X, respectively}
 \item{Pipette 14\uL{} nuclease free water into PCR Tube C (see above, \textbf{ATTEMPTED BLOCKING})}
 \item{Pipette 15.5\uL{} of nuclease free water into PCR Tube X (see above, \textbf{CONTROLS})}
@@ -194,7 +194,7 @@ Well number				& Sample \\ \hline
 		\item{Add 6\uL{} SYBR Gold to 60\uL{} of TBE running buffer}
 	\end{enumerate}
 \item{Once gel has finished running, \textbf{\textit{lightly}} agitate gel while submerged in solution for 60 minutes.}
-\item{Review gel with gel viewer. Until unnecessary, place gel back in stain for 20 minute increments and re-image.}
+\item{Review gel with gel viewer. Until unnecessary, place gel back in stain for 20-minute increments and re-image.}
 \item{Post pictures to Slack.}\\
 \end{enumerate} 
 
@@ -205,7 +205,20 @@ Well number				& Sample \\ \hline
 \item{Label containers if not already labeled}
 \item{Freeze samples at -20\C{}}
 \end{enumerate}
+\newpage
+\section{Analysis}
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=.7\textwidth]{./resources/gels/faint-bands-small.png}
+		\caption{PAGE Gel used to determine length of samples}
+		\label{mainGel}
+	\end{center}
+\end{figure}
+In this gel, from left to right we have: 10/60 DNA Ladder, Custom Ladder (40ng), B1 (40ng), B2 (40ng), B1* (40ng), B2* (40ng), X (40ng), X+B1 (40ng), X+B2 (40ng), D (40ng), X+D (40ng), A (40ng), C (40ng), Custom Ladder (40ng), and 10/60 DNA Ladder. Upon loading, there was an issue with well 15, leading to contamination of the nearby wells with 10/60 Ladder.
 
+Due to an experimental mistake, B2* was \textbf{not} incubated a second time. As such, we only expect the possibility of extension of B2.
+And, we only see sight extension on B2, none on B1, B1* or B2*. This provides support to the conclusion that \BdATP{} blocks (at the very least) the incorporations of more \BdATP{}. Moreover, there was minimal extension of B2, indicates that the incubation with (and assumed incorporation of) the \BdATP{} hinders (blocks) the incorporation of commercial dNTPs. The main anomaly of this gel is the faintness of sample C. It is only visible (but it is visible) on more exposed images of the gel. In our next experiment, we will likely re-run sample C to check that it has been extended adequately. 
+In short, this experiment supports the claim that \BdATP{} does (in part) block extension.
 \bibliographystyle{ieeetr}
 \bibliography{main}
 \end{document}
